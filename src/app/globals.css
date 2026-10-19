@@ -20,9 +20,17 @@
 }
 
 @layer base {
+  :root {
+    --header-h: 4.5rem;
+  }
+  /* The page reads as a deck: each scroll gesture lands on the next slide. */
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 5rem;
+    scroll-snap-type: y mandatory;
+  }
+  /* Until the key is entered the welcome screen is all there is. */
+  html:not([data-unlocked]) {
+    overflow: hidden;
   }
   body {
     @apply bg-paper text-ink antialiased;
@@ -381,5 +389,161 @@ html:lang(zh-Hans) [data-reveal] .w {
 @media (prefers-reduced-motion: reduce) {
   .nf-visual .nf-drift {
     animation: none;
+  }
+}
+
+/* Deck: one slide per screen; a slide taller than the screen (phones) scrolls through. */
+.slide {
+  display: flex;
+  min-height: 100svh;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: var(--header-h);
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+/* Leave room for the slide rail on the right. */
+@media (min-width: 64rem) {
+  .slide {
+    padding-right: 2rem;
+  }
+}
+.slide-body {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  padding-block: 2rem;
+}
+@media (min-width: 64rem) {
+  .slide-body {
+    gap: 3rem;
+    padding-block: 2.5rem;
+  }
+}
+
+/* A slide's details, side by side. */
+.panel-track {
+  position: relative;
+  display: flex;
+  gap: 3rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+.panel-track::-webkit-scrollbar {
+  display: none;
+}
+.panel {
+  min-width: 0;
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+.panel-btn {
+  display: grid;
+  width: 2.25rem;
+  height: 2.25rem;
+  place-items: center;
+  border: 1px solid currentColor;
+  font-weight: 600;
+  transition:
+    background-color 0.2s,
+    color 0.2s,
+    opacity 0.2s;
+}
+.panel-btn:not(:disabled):hover {
+  background: var(--color-brand);
+  border-color: var(--color-brand);
+  color: #fff;
+}
+.panel-btn:disabled {
+  opacity: 0.25;
+}
+
+/* Short laptop and projector screens: tighten the type so a slide still fits. */
+@media (min-width: 64rem) and (max-height: 52rem) {
+  .slide-body {
+    gap: 2rem;
+    padding-block: 1.75rem;
+  }
+  .d1 {
+    font-size: clamp(2.25rem, 1.4rem + 2.6vw, 3.5rem);
+  }
+  .hero-title {
+    font-size: clamp(2rem, 1rem + 2.2vw, 3rem);
+  }
+  .d2 {
+    font-size: clamp(1.75rem, 1.2rem + 1.4vw, 2.5rem);
+  }
+  .num {
+    font-size: clamp(2.25rem, 1.6rem + 1.8vw, 3.25rem);
+  }
+  .quote {
+    font-size: clamp(1.375rem, 1rem + 1.2vw, 2rem);
+  }
+  .lead {
+    font-size: 1.0625rem;
+  }
+}
+
+/* Welcome screen. */
+.gate {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  background: var(--color-paper);
+}
+@media (min-width: 64rem) {
+  .gate {
+    flex-direction: row;
+  }
+}
+html[data-unlocked] .gate:not(.is-opening) {
+  display: none;
+}
+/* Lifts like a curtain to uncover the first slide. */
+.gate.is-opening {
+  pointer-events: none;
+  animation: gate-open 0.9s cubic-bezier(0.7, 0, 0.2, 1) forwards;
+}
+@keyframes gate-open {
+  to {
+    transform: translateY(-100%);
+  }
+}
+.gate-shake {
+  animation: gate-shake 0.4s cubic-bezier(0.36, 0.07, 0.19, 0.97);
+}
+@keyframes gate-shake {
+  20%,
+  60% {
+    transform: translateX(-6px);
+  }
+  40%,
+  80% {
+    transform: translateX(6px);
+  }
+}
+/* The hero diagram waits behind the welcome screen. */
+html:not([data-unlocked]) .hero-visual * {
+  animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+  /* Still ends on animationend, so the screen is removed. */
+  .gate.is-opening {
+    animation: gate-fade 0.2s linear forwards;
+  }
+  .gate-shake {
+    animation: none;
+  }
+}
+@keyframes gate-fade {
+  to {
+    opacity: 0;
   }
 }

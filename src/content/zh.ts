@@ -279,6 +279,16 @@ const zh: Dict = {
       "以人为中心，以 5T 为特色，以实证能力为标尺，以数据和 AI 为智能基础设施，以真正的质量为长期承诺。",
     cite: "DAU 2026–2030 年发展战略及 2050 年愿景",
   },
+  gate: {
+    title: "欢迎",
+    lead: "这是岘港建筑大学 AI-native University 方案的展示。请输入访问码以继续。",
+    label: "访问码",
+    placeholder: "输入访问码",
+    submit: "进入",
+    error: "访问码不正确，请重试。",
+    note: "访问码随邀请函一同发送。",
+  },
+  deck: { prev: "上一页", next: "下一页", hint: "↑ ↓ 切换章节 · ← → 查看详情" },
   footer: {
     ownership: "本系统归岘港建筑大学（Danang Architecture University）所有。",
     address: "566 Nui Thanh, Hoa Cuong Ward, Da Nang（越南）",

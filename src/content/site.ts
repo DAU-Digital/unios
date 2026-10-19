@@ -28,3 +28,8 @@ export const owner = {
 
 export const absoluteUrl = (path: string) => `${SITE_URL}${path}`;
 export const localePath = (locale: Locale) => `/${locale}/`;
+
+// The welcome screen's key. It is a courtesy door for invited guests, not access
+// control: the site is static, so the content still ships in the HTML.
+export const ACCESS_KEY = "DAU2026";
+export const ACCESS_STORE = "dau-access";

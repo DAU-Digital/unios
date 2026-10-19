@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { notFound } from "next/navigation";
 import { Reveal } from "@/components/Reveal";
 import { htmlLang, locales, type Locale } from "@/content";
-import { SITE_URL } from "@/content/site";
+import { ACCESS_STORE, SITE_URL } from "@/content/site";
 import "../globals.css";
 import { bricolage } from "../fonts";
 
@@ -50,8 +50,15 @@ export default async function LocaleLayout({
   const { locale } = await params;
   if (!isLocale(locale)) notFound();
   return (
-    <html lang={htmlLang[locale]} className={bricolage.variable}>
+    // The unlock script below may set data-unlocked on <html> before hydration.
+    <html lang={htmlLang[locale]} className={bricolage.variable} suppressHydrationWarning>
       <body>
+        {/* Runs before first paint, so a returning guest never sees the welcome screen flash. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{localStorage.getItem(${JSON.stringify(ACCESS_STORE)})&&document.documentElement.setAttribute("data-unlocked","")}catch(e){}`,
+          }}
+        />
         {children}
         <Reveal />
       </body>

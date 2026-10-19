@@ -279,6 +279,16 @@ const ja: Dict = {
       "人間を中心に、5Tをアイデンティティに、実証されたコンピテンシーを尺度に、データとAIを知的基盤に、そして真の質を長期的な約束とする。",
     cite: "DAU発展戦略 2026–2030、2050年ビジョン",
   },
+  gate: {
+    title: "ようこそ",
+    lead: "ダナン建築大学の AI-native University 構想のプレゼンテーションです。続けるにはアクセスキーを入力してください。",
+    label: "アクセスキー",
+    placeholder: "キーを入力",
+    submit: "入場",
+    error: "キーが正しくありません。もう一度お試しください。",
+    note: "アクセスキーは招待状に記載されています。",
+  },
+  deck: { prev: "前へ", next: "次へ", hint: "↑ ↓ セクション · ← → 詳細" },
   footer: {
     ownership: "本システムはダナン建築大学（Danang Architecture University）が所有しています。",
     address: "566 Nui Thanh, Hoa Cuong Ward, Da Nang（ベトナム）",

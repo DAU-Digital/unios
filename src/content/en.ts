@@ -278,6 +278,16 @@ const en: Dict = {
       "People at the centre, 5T as our identity, evidenced competence as the measure, data and AI as intelligence infrastructure, and genuine quality as a long-term commitment.",
     cite: "DAU Development Strategy 2026–2030, Vision to 2050",
   },
+  gate: {
+    title: "Welcome",
+    lead: "This is the presentation of the AI-native University initiative of Danang Architecture University. Enter your access key to continue.",
+    label: "Access key",
+    placeholder: "Enter key",
+    submit: "Enter",
+    error: "That key isn't right. Please try again.",
+    note: "The access key comes with your invitation.",
+  },
+  deck: { prev: "Previous", next: "Next", hint: "↑ ↓ sections · ← → details" },
   footer: {
     ownership: "This system is owned by Danang Architecture University.",
     address: "566 Nui Thanh, Hoa Cuong Ward, Da Nang",

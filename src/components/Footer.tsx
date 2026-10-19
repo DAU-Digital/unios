@@ -4,8 +4,8 @@ import { sectionIds } from "./Header";
 
 export function Footer({ t }: { t: Dict }) {
   return (
-    <footer className="mt-24 overflow-hidden bg-ink text-white lg:mt-32">
-      <div className="mx-auto max-w-site px-4 pt-16 sm:px-6 lg:px-8 lg:pt-20">
+    <footer className="overflow-hidden bg-ink text-white">
+      <div className="mx-auto max-w-site px-4 pt-10 sm:px-6 lg:px-8 lg:pt-12">
         <div className="grid gap-10 lg:grid-cols-4 lg:gap-x-6">
           <div className="lg:col-span-2">
             <Image src="/images/logo-dau.png" alt="DAU" width={56} height={57} />
@@ -32,7 +32,7 @@ export function Footer({ t }: { t: Dict }) {
           </div>
         </div>
 
-        <p className="mt-14 max-w-3xl text-sm text-white/55">{t.footer.source}</p>
+        <p className="mt-8 max-w-3xl text-sm text-white/55">{t.footer.source}</p>
 
         <div className="mt-6 flex flex-wrap items-center justify-between gap-4 border-t border-white/15 py-6 text-sm text-white/60">
           <span>{t.footer.rights}</span>
@@ -43,7 +43,7 @@ export function Footer({ t }: { t: Dict }) {
       </div>
       <div
         aria-hidden
-        className="select-none text-center text-[min(38vw,26rem)] leading-[0.72] font-bold tracking-[-0.06em] text-brand"
+        className="select-none text-center text-[min(30vw,12rem)] [@media(max-height:62rem)]:hidden leading-[0.72] font-bold tracking-[-0.06em] text-brand"
       >
         DAU
       </div>

@@ -115,6 +115,17 @@ export type Dict = {
   };
   principles: { label: string; title: string; items: Item[] };
   closing: { quote: string; cite: string };
+  // Welcome screen that asks invited guests for the access key.
+  gate: {
+    title: string;
+    lead: string;
+    label: string;
+    placeholder: string;
+    submit: string;
+    error: string;
+    note: string;
+  };
+  deck: { prev: string; next: string; hint: string };
   footer: {
     ownership: string;
     address: string;

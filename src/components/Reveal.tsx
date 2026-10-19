@@ -40,16 +40,20 @@ export function Reveal() {
       { rootMargin: "0px 0px -10% 0px" },
     );
     // The hero is on screen at load, so it animates in straight away
-    // (after a frame, so the hidden start state is painted first).
+    // (after a frame, so the hidden start state is painted first), or as the
+    // welcome screen lifts.
     const hero = document.querySelectorAll("#top [data-reveal]");
-    requestAnimationFrame(() =>
+    const showHero = () =>
       requestAnimationFrame(() =>
-        hero.forEach((el) => {
-          el.classList.add("is-in");
-          el.querySelectorAll<HTMLElement>("[data-count]").forEach(countUp);
-        }),
-      ),
-    );
+        requestAnimationFrame(() =>
+          hero.forEach((el) => {
+            el.classList.add("is-in");
+            el.querySelectorAll<HTMLElement>("[data-count]").forEach(countUp);
+          }),
+        ),
+      );
+    if (document.documentElement.hasAttribute("data-unlocked")) showHero();
+    else window.addEventListener("dau:unlock", showHero, { once: true });
     document.querySelectorAll("[data-reveal]:not(#top [data-reveal])").forEach((el) => reveal.observe(el));
 
     const links = document.querySelectorAll<HTMLAnchorElement>(".nav-link");
@@ -83,6 +87,7 @@ export function Reveal() {
       reveal.disconnect();
       active.disconnect();
       window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("dau:unlock", showHero);
     };
   }, []);
   return null;

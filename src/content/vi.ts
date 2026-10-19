@@ -278,6 +278,16 @@ const vi: Dict = {
       "Lấy con người làm trung tâm, lấy 5T làm bản sắc, lấy năng lực thực chứng làm thước đo, lấy dữ liệu và AI làm hạ tầng trí tuệ, lấy chất lượng thật làm cam kết dài hạn.",
     cite: "Chiến lược phát triển DAU 2026–2030, tầm nhìn 2050",
   },
+  gate: {
+    title: "Chào mừng",
+    lead: "Đây là không gian trình bày Đề án AI-native University của Trường Đại học Kiến trúc Đà Nẵng. Vui lòng nhập mã truy cập để tiếp tục.",
+    label: "Mã truy cập",
+    placeholder: "Nhập mã",
+    submit: "Vào xem",
+    error: "Mã chưa đúng. Vui lòng thử lại.",
+    note: "Mã truy cập được gửi kèm lời mời.",
+  },
+  deck: { prev: "Trước", next: "Tiếp", hint: "↑ ↓ chuyển phần · ← → xem chi tiết" },
   footer: {
     ownership: "Hệ thống này thuộc sở hữu của Trường Đại học Kiến trúc Đà Nẵng.",
     address: "566 Núi Thành, phường Hoà Cường, TP. Đà Nẵng",
