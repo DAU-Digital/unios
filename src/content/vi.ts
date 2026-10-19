@@ -2,7 +2,7 @@ import type { Dict } from "./types";
 
 const vi: Dict = {
   meta: {
-    title: "Đề án AI-native University — Trường Đại học Kiến trúc Đà Nẵng",
+    title: "Đề án AI-native University | Đại học Kiến trúc Đà Nẵng",
     description:
       "Đề án chiến lược 2026–2031 xây dựng mô hình AI-native Competency-Based 5T University của Trường Đại học Kiến trúc Đà Nẵng (DAU).",
   },

@@ -2,7 +2,7 @@ import type { Dict } from "./types";
 
 const en: Dict = {
   meta: {
-    title: "AI-native University Project — Danang Architecture University",
+    title: "AI-native University | Danang Architecture University",
     description:
       "A 2026–2031 strategic project to build the AI-native Competency-Based 5T University model at Danang Architecture University (DAU).",
   },

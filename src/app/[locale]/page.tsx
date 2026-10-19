@@ -1,8 +1,10 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { HeroVisual } from "@/components/HeroVisual";
 import { getDict, type Dict, type Locale } from "@/content";
+import { jsonLd, pageMetadata } from "@/lib/seo";
 
 const pad = (n: number) => String(n).padStart(2, "0");
 
@@ -472,11 +474,21 @@ function Closing({ t }: { t: Dict }) {
   );
 }
 
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = (await params) as { locale: Locale };
+  return pageMetadata(locale);
+}
+
 export default async function Page({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = (await params) as { locale: Locale };
   const t = getDict(locale);
   return (
     <>
+      <script
+        type="application/ld+json"
+        // JSON-LD must be raw JSON; "<" is escaped so content can never close the tag.
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd(locale)).replace(/</g, "\\u003c") }}
+      />
       <Header t={t} locale={locale} />
       <main>
         <Hero t={t} />

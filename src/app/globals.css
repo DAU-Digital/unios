@@ -362,3 +362,24 @@ html:lang(ja) [data-reveal] .w,
 html:lang(zh-Hans) [data-reveal] .w {
   display: inline;
 }
+
+/* 404 diagram: a stray layer drifting away from the missing core. */
+.nf-visual .nf-drift {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: nf-drift 6s ease-in-out infinite;
+}
+@keyframes nf-drift {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(-10px, 14px) rotate(45deg);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .nf-visual .nf-drift {
+    animation: none;
+  }
+}

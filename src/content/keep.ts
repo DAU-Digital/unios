@@ -84,7 +84,7 @@ const rules: Record<Locale, RegExp[]> = {
   zh: compile(shared),
 };
 
-function fix(text: string, locale: Locale): string {
+export function fix(text: string, locale: Locale): string {
   let out = text;
   for (const re of rules[locale]) out = out.replace(re, glue);
   return out.replace(/AI-(?!\u2060)/g, `AI-${WJ}`);
