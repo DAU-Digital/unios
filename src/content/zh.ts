@@ -25,6 +25,12 @@ const zh: Dict = {
     lead:
       "DAU 并非在表层意义上“让大学 AI 化”，而是以人、5T 理念、OBE/VQF、实证能力和质量为中心，按照 AI-native 方向重新设计大学模式。",
     cta: "了解项目",
+    stats: [
+      { value: "9", label: "集成设计层" },
+      { value: "4", label: "核心 Copilot" },
+      { value: "5", label: "成熟度等级" },
+      { value: "2031", label: "AI-native 目标年份" },
+    ],
   },
   overview: {
     label: "01 — 概览",

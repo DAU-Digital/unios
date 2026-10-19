@@ -40,6 +40,28 @@
     word-break: normal;
     line-break: strict;
   }
+  /* Break Japanese at phrase boundaries where supported. */
+  :lang(ja) {
+    word-break: auto-phrase;
+  }
+  /* A phrase wider than a phone screen may still break inside. */
+  :lang(ja),
+  :lang(zh-Hans) {
+    overflow-wrap: anywhere;
+  }
+  /* Avoid single-word last lines in running text; even out headings. */
+  p,
+  li,
+  dd,
+  blockquote,
+  figcaption {
+    text-wrap: pretty;
+  }
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
 }
 
 @layer components {
@@ -49,6 +71,13 @@
     font-weight: 640;
     letter-spacing: -0.035em;
     line-height: 1;
+    text-wrap: balance;
+  }
+  .hero-title {
+    font-size: clamp(2.25rem, 1.2rem + 2.6vw, 3.75rem);
+    font-weight: 640;
+    letter-spacing: -0.035em;
+    line-height: 1.02;
     text-wrap: balance;
   }
   .d2 {
@@ -87,8 +116,8 @@
     font-weight: 500;
     @apply text-ink-soft;
   }
-  :lang(ja) :is(.d1, .d2, .d3, .num),
-  :lang(zh-Hans) :is(.d1, .d2, .d3, .num) {
+  :lang(ja) :is(.d1, .hero-title, .d2, .d3, .num),
+  :lang(zh-Hans) :is(.d1, .hero-title, .d2, .d3, .num) {
     letter-spacing: 0;
     line-height: 1.2;
   }
@@ -170,4 +199,166 @@
     line-height: 1.25;
     text-wrap: pretty;
   }
+}
+
+/* Hero diagram. */
+/* Paper halo keeps labels legible over lines. */
+.hero-visual .hv-label {
+  paint-order: stroke;
+  stroke: var(--color-paper);
+  stroke-width: 5px;
+  stroke-linejoin: round;
+}
+.hero-visual .hv-draw {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: hv-draw 1.6s cubic-bezier(0.6, 0, 0.2, 1) forwards;
+  animation-delay: calc(var(--i) * 0.25s);
+}
+.hero-visual .hv-spin {
+  transform-origin: 280px 280px;
+  animation: hv-spin 40s linear infinite;
+}
+.hero-visual .hv-flow {
+  stroke-dasharray: 14 86;
+  animation: hv-flow 2.4s linear infinite;
+  animation-delay: calc(var(--i) * -0.6s);
+}
+.hero-visual .hv-node {
+  opacity: 0;
+  animation: hv-in 0.6s ease-out forwards;
+  animation-delay: calc(0.9s + var(--i) * 0.15s);
+}
+.hero-visual .hv-halo {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: hv-halo 3s ease-out infinite;
+}
+.hero-visual .hv-twinkle {
+  animation: hv-twinkle 4s ease-in-out infinite;
+  animation-delay: calc(var(--i) * 0.5s);
+}
+.hero-visual .hv-layer-on {
+  opacity: 0;
+  animation: hv-layer 9s linear infinite;
+  animation-delay: calc(var(--i) * 1s);
+}
+@keyframes hv-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes hv-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes hv-flow {
+  from {
+    stroke-dashoffset: 100;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes hv-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes hv-halo {
+  from {
+    opacity: 0.35;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(1.9);
+  }
+}
+@keyframes hv-twinkle {
+  0%,
+  100% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+/* Each layer is lit for ~1s of a 9s cycle. */
+@keyframes hv-layer {
+  0%,
+  11% {
+    opacity: 1;
+  }
+  15%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Headings rise word by word. */
+.js [data-reveal] .w {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(0.45em);
+  transition:
+    opacity 0.6s ease,
+    transform 0.8s cubic-bezier(0.2, 0.7, 0.1, 1);
+  transition-delay: calc(var(--w) * 45ms + 120ms);
+}
+.js [data-reveal].is-in .w {
+  opacity: 1;
+  transform: none;
+}
+
+/* Bars that grow in when revealed. */
+.js [data-reveal] .grow-x {
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 1s cubic-bezier(0.2, 0.7, 0.1, 1) 0.2s;
+}
+.js [data-reveal].is-in .grow-x {
+  transform: none;
+}
+
+.nav-link[data-active]::after {
+  transform: scaleX(1);
+}
+
+.scroll-progress {
+  transform: scaleX(var(--progress, 0));
+  transform-origin: left;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-visual * {
+    animation: none !important;
+  }
+  .hero-visual .hv-draw {
+    stroke-dashoffset: 0;
+  }
+  .hero-visual .hv-node {
+    opacity: 1;
+  }
+  .hero-visual .hv-flow {
+    display: none;
+  }
+  .js [data-reveal] .w,
+  .js [data-reveal] .grow-x {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* CJK headings have no spaces, so a "word" would be the whole line: keep it inline so it can wrap. */
+html:lang(ja) [data-reveal] .w,
+html:lang(zh-Hans) [data-reveal] .w {
+  display: inline;
 }

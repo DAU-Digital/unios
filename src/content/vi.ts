@@ -24,6 +24,12 @@ const vi: Dict = {
     lead:
       "DAU không “AI hóa đại học” theo nghĩa bề mặt. DAU thiết kế lại mô hình đại học theo hướng AI-native, lấy con người, triết lý 5T, OBE/VQF, năng lực thực chứng và chất lượng làm trung tâm.",
     cta: "Khám phá đề án",
+    stats: [
+      { value: "9", label: "lớp thiết kế tích hợp" },
+      { value: "4", label: "Copilot lõi" },
+      { value: "5", label: "cấp độ trưởng thành" },
+      { value: "2031", label: "mục tiêu AI-native" },
+    ],
   },
   overview: {
     label: "01 — Tổng quan",

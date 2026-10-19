@@ -40,6 +40,7 @@ export type Dict = {
     model: string;
     lead: string;
     cta: string;
+    stats: Stat[];
   };
   overview: {
     label: string;

@@ -25,6 +25,12 @@ const ja: Dict = {
     lead:
       "DAUが目指すのは、表面的な「大学のAI化」ではありません。人間、5T哲学、OBE/VQF、実証されたコンピテンシー、そして質を中心に据え、大学のあり方そのものをAI-nativeな形へと再設計します。",
     cta: "プロジェクトを見る",
+    stats: [
+      { value: "9", label: "統合設計レイヤー" },
+      { value: "4", label: "コア Copilot" },
+      { value: "5", label: "成熟度レベル" },
+      { value: "2031", label: "AI-native 目標年" },
+    ],
   },
   overview: {
     label: "01 — 概要",

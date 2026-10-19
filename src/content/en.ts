@@ -24,6 +24,12 @@ const en: Dict = {
     lead:
       "DAU is not simply “adding AI” to the university at surface level. DAU is redesigning its university model to be AI-native, with people, the 5T philosophy, OBE/VQF, evidenced competence and quality at the centre.",
     cta: "Explore the project",
+    stats: [
+      { value: "9", label: "integrated design layers" },
+      { value: "4", label: "core Copilots" },
+      { value: "5", label: "maturity levels" },
+      { value: "2031", label: "AI-native target" },
+    ],
   },
   overview: {
     label: "01 — Overview",

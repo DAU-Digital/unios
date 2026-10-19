@@ -32,7 +32,8 @@ export function Header({ t, locale }: { t: Dict; locale: Locale }) {
         </div>
       </div>
 
-      <div className="border-b border-rule bg-paper/95 backdrop-blur">
+      <div className="relative border-b border-rule bg-paper/95 backdrop-blur">
+        <div aria-hidden className="scroll-progress absolute inset-x-0 -bottom-px h-0.5 bg-brand" />
         <div className="mx-auto flex h-[4.5rem] max-w-site items-center justify-between gap-6 px-4 sm:px-6 lg:px-8">
           <a href="#top" className="flex items-center gap-3">
             <Image src="/images/logo-dau.png" alt="DAU" width={44} height={45} priority />
