@@ -3,5 +3,5 @@
   "framework": "nextjs",
   "cleanUrls": true,
   "trailingSlash": true,
-  "redirects": [{ "source": "/", "destination": "/vi/", "permanent": false }]
+  "redirects": [{ "source": "/", "destination": "/vi/", "permanent": true }]
 }
