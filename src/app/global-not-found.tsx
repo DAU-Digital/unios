@@ -10,8 +10,9 @@ export const metadata: Metadata = {
   title: "404 — Không tìm thấy trang | DAU AI-native University",
 };
 
-const copy: Record<Locale, { label: string; title: string; text: string; home: string; owner: string }> = {
+const copy: Record<Locale, { brand: string; label: string; title: string; text: string; home: string; owner: string }> = {
   vi: {
+    brand: "Đại học AI-native",
     label: "Lỗi 404",
     title: "Không tìm thấy trang",
     text: "Trang bạn tìm có thể đã được di chuyển, đổi tên hoặc chưa từng tồn tại. Mời bạn quay lại trang giới thiệu Đề án AI-native University.",
@@ -19,25 +20,28 @@ const copy: Record<Locale, { label: string; title: string; text: string; home: s
     owner: "Hệ thống này thuộc sở hữu của Trường Đại học Kiến trúc Đà Nẵng.",
   },
   en: {
+    brand: "AI-native University",
     label: "Error 404",
     title: "Page not found",
-    text: "The page you are looking for may have been moved, renamed or never existed. Head back to the AI-native University project page.",
+    text: "The page you are looking for may have been moved, renamed or never existed. Head back to the AI-native University Initiative page.",
     home: "Back to home",
     owner: "This system is owned by Danang Architecture University.",
   },
   ja: {
+    brand: "AIネイティブ大学",
     label: "エラー 404",
     title: "ページが見つかりません",
-    text: "お探しのページは移動・名称変更されたか、存在しない可能性があります。AI-native University プロジェクトのページへお戻りください。",
+    text: "お探しのページは移動・名称変更されたか、存在しない可能性があります。AIネイティブ大学構想のページへお戻りください。",
     home: "トップページへ",
-    owner: "本システムはダナン建築大学（Danang Architecture University）が所有しています。",
+    owner: "本システムはダナン建築大学が所有する。",
   },
   zh: {
+    brand: "AI原生大学",
     label: "错误 404",
     title: "页面未找到",
-    text: "您访问的页面可能已被移动、重命名或从未存在。请返回 AI-native University 项目页面。",
+    text: "您访问的页面可能已被移动、重命名或从未存在。请返回AI原生大学建设方案页面。",
     home: "返回首页",
-    owner: "本系统归岘港建筑大学（Danang Architecture University）所有。",
+    owner: "本系统归岘港建筑大学所有。",
   },
 };
 
@@ -108,7 +112,11 @@ export default function GlobalNotFound() {
               <Image src="/images/logo-dau.png" alt="DAU" width={44} height={45} priority />
               <span className="flex flex-col leading-tight">
                 <span className="text-lg font-semibold tracking-tight">DAU</span>
-                <span className="text-xs text-ink-soft">AI-native University</span>
+                {locales.map((l) => (
+                  <span key={l} data-l={l} className="text-xs text-ink-soft">
+                    {copy[l].brand}
+                  </span>
+                ))}
               </span>
             </a>
           </div>

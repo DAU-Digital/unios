@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "npx serve out",
-    "og": "tsx scripts/og-images.mts"
+    "og": "tsx scripts/og-images.mts",
+    "test": "node --import tsx --test \"src/**/*.test.ts\"",
+    "test:e2e": "node --import tsx --test --test-concurrency=1 \"scripts/e2e/*.test.mts\"",
+    "shots": "tsx scripts/shots.mts"
   },
   "dependencies": {
     "next": "^16.4.2",

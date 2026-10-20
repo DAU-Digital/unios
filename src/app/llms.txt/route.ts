@@ -3,7 +3,7 @@ import { absoluteUrl, localePath, owner } from "@/content/site";
 
 export const dynamic = "force-static";
 
-const plain = (s: string) => s.replace(/ /g, " ").replace(/⁠/g, "");
+const plain = (s: string) => s.replace(/\u00a0/g, " ").replace(/[\u2060\u200b]/g, "");
 
 // A Markdown map of the site for AI assistants, built from the page copy.
 export function GET() {

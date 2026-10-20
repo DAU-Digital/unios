@@ -1,7 +1,8 @@
 import Image from "next/image";
 import { localeLabels, locales, type Dict, type Locale } from "@/content";
+import { BookButton } from "./book/BookButton";
 
-export const sectionIds = ["overview", "philosophy", "model", "copilots", "roadmap", "benchmark"] as const;
+export const sectionIds = ["why", "overview", "philosophy", "model", "copilots", "roadmap", "benchmark"] as const;
 
 export function Header({ t, locale }: { t: Dict; locale: Locale }) {
   const links = sectionIds.map((id) => ({ id, label: t.nav[id] }));
@@ -28,6 +29,7 @@ export function Header({ t, locale }: { t: Dict; locale: Locale }) {
         </nav>
 
         <div className="flex items-center gap-3">
+          <BookButton label={t.nav.book} />
           <nav aria-label="Language" className="flex text-[0.8125rem]">
             {locales.map((l) => (
               <a

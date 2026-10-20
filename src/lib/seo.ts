@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import { getDict, htmlLang, locales, type Locale } from "@/content";
 import { DEFAULT_LOCALE, SITE_URL, absoluteUrl, localePath, ogLocale, owner } from "@/content/site";
 
-// Display copy glues words with no-break spaces / word joiners; tags want plain text.
-const plain = (s: string) => s.replace(/\u00a0/g, " ").replace(/\u2060/g, "");
+// Display copy glues words with no-break spaces / word joiners and marks Chinese
+// word breaks with zero-width spaces; tags want plain text.
+const plain = (s: string) => s.replace(/\u00a0/g, " ").replace(/[\u2060\u200b]/g, "");
 
 export const ogImagePath = (locale: Locale) => `/og/${locale}.png`;
 

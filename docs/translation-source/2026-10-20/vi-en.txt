@@ -1,0 +1,1071 @@
+DAU website bilingual Vietnamese and English edition
+
+Trường Đại học Kiến trúc Đà Nẵng
+
+Danang Architecture University
+
+Ngày 20 tháng 10 năm 2026
+
+October 20, 2026
+
+Nguồn tiếng Việt: dau-unios.coregenaihub.com/vi/
+
+Vietnamese source: dau-unios.coregenaihub.com/vi/
+
+Đề án chiến lược 2026–2031
+
+Strategic Initiative 2026–2031
+
+Đại học AI-native dựa trên năng lực theo mô hình 5T
+
+AI-native Competency-Based 5T University
+
+Đại học AI-native lấy con người làm trung tâm
+
+A human-centered AI-native university
+
+DAU không “AI hóa đại học” theo nghĩa bề mặt. DAU thiết kế lại mô hình đại học theo hướng AI-native, lấy con người, triết lý 5T, OBE/VQF, năng lực thực chứng và chất lượng làm trung tâm.
+
+DAU is not simply adding a superficial layer of AI to the university. It is redesigning the university as an AI-native institution, centered on people, the 5T philosophy, outcome-based education aligned with the Vietnam Qualifications Framework (OBE/VQF), demonstrated competence, and quality.
+
+Khám phá đề án | Mô hình
+
+Explore the initiative | The model
+
++---------+------------------------------------------------------------+
+| Giá trị | Tóm lược                                                   |
+|         |                                                            |
+| Value   | At a glance                                                |
++:=======:+============================================================+
+| 9       | Lớp thiết kế tích hợp                                      |
+|         |                                                            |
+|         | Integrated design layers                                   |
++---------+------------------------------------------------------------+
+| 4       | Copilot lõi                                                |
+|         |                                                            |
+|         | Core Copilots                                              |
++---------+------------------------------------------------------------+
+| 5       | Cấp độ trưởng thành                                        |
+|         |                                                            |
+|         | Maturity levels                                            |
++---------+------------------------------------------------------------+
+| 2031    | Mục tiêu AI-native                                         |
+|         |                                                            |
+|         | Target year for becoming AI-native                         |
++---------+------------------------------------------------------------+
+
+Tôn chỉ
+
+Guiding motto
+
+Thực chất – Thực tài – Kiến tạo tương lai
+
+Substance – Proven Capability – Shaping the Future
+
+01 Tổng quan
+
+01 Overview
+
+Một chương trình chuyển đổi đại học, không phải một dự án phần mềm
+
+A university transformation initiative, not a software project
+
+Đề án không phải là mua chatbot hay phần mềm quản lý. Đây là việc đưa DAU trở thành một hệ sinh thái đại học vận hành bằng dữ liệu, chuẩn đầu ra, năng lực thực chứng và AI — trong khi con người vẫn là chủ thể ra quyết định cuối cùng.
+
+This initiative is not about purchasing a chatbot or university management software. It is about transforming DAU into a university ecosystem built around data, learning outcomes, demonstrated competence, and AI, while people retain final decision-making authority.
+
+Công nghệ tái cấu trúc giáo dục
+
+Technology is reshaping education
+
+AI, dữ liệu lớn, tự động hóa, Digital Twin, chuyển đổi xanh và kinh tế số đang thay đổi cách dạy, học và quản trị đại học.
+
+AI, big data, automation, digital twins, the green transition, and the digital economy are changing how universities teach, support learning, and govern themselves.
+
+Thị trường cần năng lực thật
+
+The labor market demands demonstrated competence
+
+Người học cần chứng minh năng lực bằng sản phẩm và minh chứng xác thực, không chỉ bằng bảng điểm.
+
+Learners need to demonstrate their competencies through work products and authentic evidence, not academic transcripts alone.
+
+Tự chủ và trách nhiệm giải trình
+
+Autonomy and accountability
+
+Giáo dục đại học chuyển sang tự chủ, kiểm định và minh bạch chất lượng.
+
+Higher education is moving toward greater institutional autonomy, accreditation, and transparency in quality.
+
+Từ quy mô sang năng lực
+
+From scale to capability
+
+Hướng phát triển chuyển từ quy mô sang năng lực, dữ liệu, chất lượng và đổi mới sáng tạo.
+
+The focus of development is shifting from institutional size to capability, data, quality, and innovation.
+
++-----------+------------------------------------------------------------------------+
+| Mốc       | Ý nghĩa                                                                |
+|           |                                                                        |
+| Milestone | Meaning                                                                |
++:=========:+========================================================================+
+| 2006      | Nền tảng                                                               |
+|           | Gần 20 năm xây dựng và phát triển.                                     |
+|           |                                                                        |
+|           | Foundations                                                            |
+|           | Nearly 20 years of institutional development.                          |
++-----------+------------------------------------------------------------------------+
+| 2026–2031 | 6 năm                                                                  |
+|           | Dự án chiến lược trọng điểm của DAU.                                   |
+|           |                                                                        |
+|           | Six years                                                              |
+|           | A major strategic initiative for DAU.                                  |
++-----------+------------------------------------------------------------------------+
+| Cấp 5     | AI-native                                                              |
+|           | Mục tiêu trưởng thành hướng tới vào năm 2031.                          |
+| Level 5   |                                                                        |
+|           | AI-native                                                              |
+|           | The maturity level DAU aims to reach by 2031.                          |
++-----------+------------------------------------------------------------------------+
+| 2050      | Tầm nhìn                                                               |
+|           | Giá trị 5T – Năng lực thực chứng – Tầm vóc châu Á và thế giới.         |
+|           |                                                                        |
+|           | Vision                                                                 |
+|           | 5T values, demonstrated competence, and standing in Asia and globally. |
++-----------+------------------------------------------------------------------------+
+
+02 Bản sắc
+
+02 Identity
+
+Ba tầng 5T
+
+The three dimensions of 5T
+
+5T là bản sắc của DAU, được tách thành ba tầng riêng biệt: triết lý định hướng, phương thức giáo dục và giá trị học hiệu. AI-native chỉ là hạ tầng để hiện thực hóa các giá trị này.
+
+5T defines DAU’s identity through three distinct dimensions: its guiding philosophy, its educational approach, and its institutional values. The AI-native architecture serves as the infrastructure for putting these values into practice.
+
+Triết lý 5T — Nền tảng tư tưởng
+
+5T Philosophy — Intellectual foundations
+
++----+------------------+----------------------------------------------+
+| T  | Thuật ngữ DAU    | Ý nghĩa                                      |
+|    |                  |                                              |
+|    | DAU term         | Meaning                                      |
++:==:+==================+==============================================+
+| T1 | Tĩnh tại         | Sự tĩnh lặng nội tâm                         |
+|    |                  |                                              |
+|    | Tranquility      | Inner stillness                              |
++----+------------------+----------------------------------------------+
+| T2 | Tuệ giác         | Sự thấu hiểu qua chiêm nghiệm                |
+|    |                  |                                              |
+|    | Theoria          | Reflective insight                           |
++----+------------------+----------------------------------------------+
+| T3 | Thực chứng       | Minh chứng gắn với thực tiễn                 |
+|    |                  |                                              |
+|    | Tangibility      | Evidence grounded in practice                |
++----+------------------+----------------------------------------------+
+| T4 | Thông biến       | Khả năng thích ứng linh hoạt                 |
+|    |                  |                                              |
+|    | Transfluency     | Adaptive fluency                             |
++----+------------------+----------------------------------------------+
+| T5 | Trường tồn       | Giá trị bền lâu                              |
+|    |                  |                                              |
+|    | Transcendence    | Enduring value                               |
++----+------------------+----------------------------------------------+
+
+Giáo dục 5T — Phương thức đào tạo
+
+5T Education — Educational approach
+
++----+------------------+----------------------------------------------+
+| T  | Thuật ngữ DAU    | Ý nghĩa                                      |
+|    |                  |                                              |
+|    | DAU term         | Meaning                                      |
++:==:+==================+==============================================+
+| T1 | Thực học         | Học sâu và thực chất                         |
+|    |                  |                                              |
+|    | Think            | Deep, substantive learning                   |
++----+------------------+----------------------------------------------+
+| T2 | Thực hành        | Học thông qua thực hành                      |
+|    |                  |                                              |
+|    | Train            | Learning through practice                    |
++----+------------------+----------------------------------------------+
+| T3 | Thực nghề        | Thực hành nghề nghiệp                        |
+|    |                  |                                              |
+|    | Task             | Professional practice                        |
++----+------------------+----------------------------------------------+
+| T4 | Thực chiến       | Thể hiện năng lực trong bối cảnh thực tế     |
+|    |                  |                                              |
+|    | Test             | Performance in real-world settings           |
++----+------------------+----------------------------------------------+
+| T5 | Thực sáng tạo    | Đổi mới sáng tạo                             |
+|    |                  |                                              |
+|    | Transform        | Creative innovation                          |
++----+------------------+----------------------------------------------+
+
+Giá trị học hiệu 5T — Dấu ấn người học DAU
+
+5T Institutional Values — Hallmarks of DAU learners
+
++----+------------------+----------------------------------------------+
+| T  | Thuật ngữ DAU    | Ý nghĩa                                      |
+|    |                  |                                              |
+|    | DAU term         | Meaning                                      |
++:==:+==================+==============================================+
+| T1 | Tiên phong       | Tinh thần tiên phong                         |
+|    |                  |                                              |
+|    | Trailblazing     | Pioneering                                   |
++----+------------------+----------------------------------------------+
+| T2 | Thực tiễn        | Gắn với thực tiễn                            |
+|    |                  |                                              |
+|    | Tangible         | Practical relevance                          |
++----+------------------+----------------------------------------------+
+| T3 | Toàn diện        | Phát triển toàn diện                         |
+|    |                  |                                              |
+|    | Thriving         | Holistic development                         |
++----+------------------+----------------------------------------------+
+| T4 | Tương tác        | Tương tác và hợp tác                         |
+|    |                  |                                              |
+|    | Togetherness     | Interaction and collaboration                |
++----+------------------+----------------------------------------------+
+| T5 | Trách nhiệm      | Trách nhiệm và trách nhiệm giải trình        |
+|    |                  |                                              |
+|    | Trustworthy      | Responsibility and accountability            |
++----+------------------+----------------------------------------------+
+
+Chỉ dấu vận hành đưa 5T vào dữ liệu và AI
+
+Operational indicators that bring 5T into data and AI
+
+Năng lực thực chứng · Trách nhiệm số · Tư duy kiến tạo
+
+Demonstrated competence · Digital responsibility · A constructive mindset
+
+03 Mô hình
+
+03 The model
+
+Một thiết kế tích hợp, chín lớp
+
+One integrated design with nine layers
+
+Mô hình AI-native Competency-Based DAU được xây từ chín lớp, đi từ giá trị con người đến hạ tầng trí tuệ và chất lượng — một thiết kế thống nhất thay vì các công cụ rời rạc.
+
+DAU’s AI-native, competency-based model comprises nine layers, extending from human values to the infrastructure for intelligence and quality. These layers form a unified design rather than a collection of disconnected tools.
+
+5A 5T lấy con người làm trung tâm
+
+5A Human-centered 5T
+
+Con người là trung tâm; AI không thay thế giảng viên.
+
+People remain at the center; AI does not replace faculty members.
+
+5B OBE/VQF
+
+Đào tạo theo chuẩn đầu ra, khớp Khung trình độ quốc gia Việt Nam.
+
+Outcome-based education aligned with the Vietnam Qualifications Framework.
+
+5C Hệ sinh thái CBE AI-native
+
+5C AI-native CBE Ecosystem
+
+Biến chuẩn đầu ra thành năng lực có thể quan sát, đo lường, chứng minh và cải tiến.
+
+Translates learning outcomes into competencies that can be observed, measured, demonstrated, and improved.
+
+5D Lõi OBE/CBE
+
+5D OBE/CBE Core
+
+Xương sống dữ liệu học thuật của toàn trường.
+
+The academic data backbone of the entire university.
+
+5E Bản đồ năng lực
+
+5E Competency Map
+
+Năng lực mô tả bằng hành vi quan sát được, gắn minh chứng, rubric và mức thành thạo.
+
+Defines competencies through observable behaviors linked to evidence, rubrics, and proficiency levels.
+
+5F Bộ não thứ hai và quản trị
+
+5F Second Brain and Governance
+
+Trí nhớ thể chế, Knowledge Graph và quản trị dữ liệu – AI.
+
+Institutional memory, the Knowledge Graph, and data and AI governance.
+
+5G Hiệu quả hạ tầng AI
+
+5G AI Infrastructure Efficiency
+
+Điều phối mô hình, kiểm soát chi phí; thay mô hình mà không phá dữ liệu nền.
+
+Orchestrates models and controls costs, allowing models to be replaced without disrupting the underlying data foundation.
+
+5H Điều phối tác nhân AI
+
+5H Agentic Orchestration
+
+Điều phối các tác nhân AI có phân quyền, nhật ký kiểm toán và con người trong vòng lặp.
+
+Coordinates AI agents through role-based permissions, audit trails, and human-in-the-loop oversight.
+
+5I Mô hình thế giới, minh chứng và trí tuệ chất lượng
+
+5I World Models, Evidence, and Quality Intelligence
+
+Digital Twin University, Learning Analytics, Living Portfolio, PDCA/CQI và kiểm định sống.
+
+Brings together Digital Twin University, Learning Analytics, Living Portfolio, PDCA/CQI, and continuous accreditation readiness.
+
+04 Copilot
+
+04 Copilots
+
+Bốn Copilot lõi, một nền tảng chung
+
+Four core Copilots on one shared foundation
+
+Agentic AI không phải một chatbot đơn lẻ, mà là hệ sinh thái tác nhân có phân quyền, kiểm soát và trách nhiệm giải trình. Mỗi Copilot có giới hạn rõ ràng.
+
+Agentic AI is not a standalone chatbot. It is an ecosystem of agents with defined permissions, controls, and accountability. Each Copilot operates within clear boundaries.
+
+Gia sư AI
+
+AI Tutor
+
+Dành cho: Sinh viên. Đồng hành học tập theo bản đồ năng lực, gợi ý luyện tập và phản hồi.
+
+For students. Supports learning based on the competency map, recommends practice activities, and provides feedback.
+
+Giới hạn: Không làm bài thay sinh viên.
+
+Boundary. Does not complete assignments on students’ behalf.
+
+Copilot dành cho giảng viên
+
+Faculty Copilot
+
+Dành cho: Giảng viên. Hỗ trợ thiết kế học phần, rubric, học liệu và phản hồi cho người học.
+
+For faculty members. Supports course design, rubrics, learning materials, and feedback to learners.
+
+Giới hạn: Không thay quyền chuyên môn của giảng viên.
+
+Boundary. Does not override faculty members’ academic judgment or authority.
+
+Copilot hỗ trợ nghiên cứu
+
+Research Copilot
+
+Dành cho: Nhà nghiên cứu. Hỗ trợ tổng quan tài liệu, quản lý dữ liệu và quy trình công bố.
+
+For researchers. Supports literature reviews, data management, and publication workflows.
+
+Giới hạn: Không viết bài thay, không bịa dữ liệu.
+
+Boundary. Does not write papers on researchers’ behalf or fabricate data.
+
+Copilot hỗ trợ quản trị
+
+Admin Copilot
+
+Dành cho: Quản trị. Hỗ trợ quy trình, báo cáo, theo dõi chất lượng và kiểm định.
+
+For university administration. Supports workflows, reporting, quality monitoring, and accreditation.
+
+Giới hạn: Không tự quyết học vụ, tài chính, nhân sự, kiểm định.
+
+Boundary. Does not independently make decisions on academic affairs, finance, personnel, or accreditation.
+
+Cả bốn dùng chung Second Brain, Knowledge Graph, OBE/CBE Core và Data/AI Governance.
+
+All four share the Second Brain, Knowledge Graph, OBE/CBE Core, and Data and AI Governance framework.
+
+Second Brain giúp DAU nhớ đúng.
+
+The Second Brain helps DAU maintain accurate institutional memory.
+
+World Models giúp DAU dự báo tốt hơn.
+
+World Models help DAU make better predictions.
+
+Con người quyết định.
+
+People make the decisions.
+
+05 Trưởng thành
+
+05 Maturity
+
+Năm cấp độ trưởng thành
+
+Five maturity levels
+
+Mỗi cấp độ là một điều kiện cần cho cấp tiếp theo. DAU tiến từng bước, đo thật trước khi mở rộng.
+
+Each level is a prerequisite for the next. DAU progresses step by step, measuring actual performance before scaling up.
+
++--------+------------------+------------------------------------------------------------------------+
+| Cấp độ | Giai đoạn        | Mô tả                                                                  |
+|        |                  |                                                                        |
+| Level  | Stage            | Description                                                            |
++:======:+==================+========================================================================+
+| 1      | Số hóa           | Quy trình và dữ liệu được số hóa.                                      |
+|        |                  |                                                                        |
+|        | Digitized        | Processes and data are digitized.                                      |
++--------+------------------+------------------------------------------------------------------------+
+| 2      | Dựa trên dữ liệu | Quyết định có dữ liệu làm căn cứ.                                      |
+|        |                  |                                                                        |
+|        | Data-informed    | Decisions are informed by data.                                        |
++--------+------------------+------------------------------------------------------------------------+
+| 3      | Tích hợp AI      | AI được đưa vào các hoạt động trọng tâm.                               |
+|        |                  |                                                                        |
+|        | AI-integrated    | AI is embedded in core activities.                                     |
++--------+------------------+------------------------------------------------------------------------+
+| 4      | Dẫn dắt bởi AI   | AI điều phối quy trình, con người giám sát.                            |
+|        |                  |                                                                        |
+|        | AI-driven        | AI orchestrates workflows under human oversight.                       |
++--------+------------------+------------------------------------------------------------------------+
+| 5      | AI-native        | Đại học vận hành trên nền dữ liệu và AI từ thiết kế.                   |
+|        |                  |                                                                        |
+|        |                  | Data and AI are built into the university’s operating model by design. |
++--------+------------------+------------------------------------------------------------------------+
+
+Mục tiêu: hướng tới cấp độ 5 vào năm 2031.
+
+Target: progress toward Level 5 by 2031.
+
+06 Lộ trình
+
+06 Roadmap
+
+Lộ trình 2026–2031
+
+Roadmap for 2026–2031
+
+Công nghệ đi sau mục tiêu học thuật. Mỗi giai đoạn chỉ mở rộng khi dữ liệu và minh chứng đã đủ tin cậy.
+
+Academic goals guide technology choices. Expansion at each stage proceeds only when the data and evidence are sufficiently reliable.
+
+100 ngày đầu
+
+First 100 days
+
+Khởi động. Thành lập Ban Chỉ đạo, chọn chương trình đào tạo thí điểm, Second Brain v1.
+
+Launch. Establish the Steering Committee, select pilot academic programs, and launch Second Brain v1.
+
+2026
+
+Sẵn sàng cho AI và CBE. Thí điểm OBE/CBE Core và Competency Map; ban hành chính sách dữ liệu và AI.
+
+AI-ready and CBE-ready. Pilot the OBE/CBE Core and Competency Map; issue data and AI policies.
+
+2027
+
+Tích hợp AI và CBE. Thí điểm AI Tutor, Faculty Copilot, Research Copilot; triển khai Living Portfolio.
+
+AI-integrated and CBE-integrated. Pilot the AI Tutor, Faculty Copilot, and Research Copilot; introduce the Living Portfolio.
+
+2028–2029
+
+DAU đào tạo theo năng lực với AI dẫn dắt. Mở rộng Agentic AI; Digital Twin cấp sinh viên, học phần, chương trình; kiểm định sống.
+
+AI-driven CBE at DAU. Expand Agentic AI; develop digital twins at the student, course, and program levels; establish continuous accreditation readiness.
+
+2030–2031
+
+Hoàn thiện lõi AI-native. Hệ sinh thái đa tác nhân, Digital Twin toàn trường, học tập suốt đời.
+
+Completion of the AI-native core. Develop a multi-agent ecosystem, a university-wide digital twin, and lifelong learning.
+
+Sau 2031
+
+Beyond 2031
+
+Mở rộng và nâng mức trưởng thành AI-native. Mở rộng toàn trường và tối ưu vận hành.
+
+AI-native scaling and maturity. Expand implementation across the university and optimize operations.
+
+“Bắt đầu nhỏ, đo thật, cải tiến nhanh, mở rộng có kiểm soát.”
+
+“Start small, measure actual results, improve quickly, and scale with appropriate controls.”
+
+Các mốc là khung đề xuất; việc chuyển giai đoạn dựa trên Chỉ số trưởng thành dữ liệu và Chỉ số xác thực minh chứng.
+
+These milestones form a proposed framework. Progression from one stage to the next depends on the Data Maturity Index and the Evidence Validation Index.
+
+Chỉ tiêu đề xuất đến năm 2030
+
+Proposed targets for 2030
+
++----------+-----------------------------------------------------------------------------------------------------------+
+| Chỉ tiêu | Nội dung                                                                                                  |
+|          |                                                                                                           |
+| Target   | Indicator                                                                                                 |
++:========:+===========================================================================================================+
+| 100%     | Chương trình đào tạo được rà soát theo chuẩn đầu ra, VQF và kiểm định.                                    |
+|          |                                                                                                           |
+|          | Academic programs reviewed for alignment with learning outcomes, the VQF, and accreditation requirements. |
++----------+-----------------------------------------------------------------------------------------------------------+
+| ≥50%     | Sinh viên khóa mới 2027–2030 có Living Portfolio.                                                         |
+|          |                                                                                                           |
+|          | Students in the 2027–2030 entering cohorts with a Living Portfolio.                                       |
++----------+-----------------------------------------------------------------------------------------------------------+
+| 100%     | Giảng viên được bồi dưỡng OBE/VQF, rubric và đánh giá.                                                    |
+|          |                                                                                                           |
+|          | Faculty members receiving professional development in OBE/VQF, rubrics, and assessment.                   |
++----------+-----------------------------------------------------------------------------------------------------------+
+| ≥80%     | Giảng viên hoàn thành AI-readiness và học liệu số.                                                        |
+|          |                                                                                                           |
+|          | Faculty members completing AI-readiness preparation and the development of digital learning materials.    |
++----------+-----------------------------------------------------------------------------------------------------------+
+| ≥30%     | Giảng viên cơ hữu có học vị tiến sĩ.                                                                      |
+|          |                                                                                                           |
+|          | Full-time faculty members holding a doctoral degree.                                                      |
++----------+-----------------------------------------------------------------------------------------------------------+
+
+Theo Chiến lược phát triển 2026–2030. Kết quả chỉ được công bố khi có minh chứng.
+
+Based on the 2026–2030 Development Strategy. Results will be reported only when supported by evidence.
+
+07 Trụ cột
+
+07 Strategic pillars
+
+Bảy trụ cột chiến lược
+
+Seven strategic pillars
+
+Tất cả trụ cột đứng trên một nền chung: giá trị 5T và đào tạo theo chuẩn đầu ra OBE/VQF.
+
+All seven pillars share a common foundation: 5T values and outcome-based education aligned with the VQF.
+
+01 Đào tạo
+
+01 Education
+
+Chương trình theo năng lực, studio hóa, Living Portfolio.
+
+Competency-based programs, studio-based learning, and the Living Portfolio.
+
+02 Khoa học công nghệ – AI
+
+02 Science, Technology, and AI
+
+Research Copilot và quy trình công bố minh bạch.
+
+The Research Copilot and transparent publication workflows.
+
+03 Cộng đồng
+
+03 Community engagement
+
+Học tập phục vụ cộng đồng, kết nối địa phương.
+
+Service-learning and engagement with local communities.
+
+04 Hợp tác quốc tế và truyền thông
+
+04 International cooperation and communications
+
+Truyền thông giá trị đầu tư giáo dục, mở rộng đối tác.
+
+Communicating the value of investment in education and expanding partnerships.
+
+05 Đội ngũ
+
+05 Faculty and staff
+
+Bồi dưỡng năng lực OBE, AI-readiness cho giảng viên.
+
+Developing faculty capabilities in OBE and AI readiness.
+
+06 Tài chính và cơ sở vật chất
+
+06 Finance and facilities
+
+Hạ tầng AI, cơ sở 2, đa dạng nguồn lực.
+
+AI infrastructure, a second campus, and diversified resources.
+
+07 Chất lượng và IQA
+
+07 Quality and internal quality assurance
+
+Đảm bảo chất lượng bên trong ở 4 cấp: Trường, Khoa, Chương trình, Học phần.
+
+Internal quality assurance (IQA) at four levels: university, academic unit, program, and course.
+
+Ưu tiên liên ngành Thiết kế × Lĩnh vực chuyên môn
+
+Interdisciplinary priorities under Design × Domain
+
+- Đô thị thông minh, thiết kế đô thị và bản sao số
+
+  Smart City, Urban Design, and Digital Twin
+
+- Kiến trúc xanh và xây dựng bền vững
+
+  Green Architecture and Sustainable Construction
+
+- BIM, quản lý xây dựng và tài chính dự án
+
+  BIM, Construction Management, and Project Finance
+
+- UX/UI, sản phẩm số và truyền thông thị giác
+
+  UX/UI, Digital Product, and Visual Communication
+
+08 Thí điểm
+
+08 Pilot
+
+Studio đồ án kiến trúc
+
+Architectural design studio
+
+Bản thử nghiệm
+
+Pilot version
+
+Rubric 9 tiêu chuẩn cho đồ án kiến trúc là sản phẩm thí điểm đầu tiên. AI được dùng có kiểm soát và phải khai báo; sinh viên phải chứng minh được năng lực cá nhân. Yếu tố kháng AI được lồng vào xuyên suốt, không tách thành tiêu chuẩn riêng.
+
+A nine-standard rubric for architectural design projects is the first pilot deliverable. AI use is subject to controls and must be disclosed; students must demonstrate their own competence. AI-resistant assessment is embedded throughout the rubric rather than treated as a separate standard.
+
++------+---------------------------------------------------------------+
+| Mã   | Tiêu chuẩn đánh giá                                           |
+|      |                                                               |
+| Code | Assessment standard                                           |
++:====:+===============================================================+
+| TC1  | Ý tưởng và sáng tạo                                           |
+|      |                                                               |
+|      | Concept and creativity                                        |
++------+---------------------------------------------------------------+
+| TC2  | Bản sắc và bản địa                                            |
+|      |                                                               |
+|      | Identity and local context                                    |
++------+---------------------------------------------------------------+
+| TC3  | Không gian và công năng                                       |
+|      |                                                               |
+|      | Space and function                                            |
++------+---------------------------------------------------------------+
+| TC4  | Quy hoạch và cảnh quan                                        |
+|      |                                                               |
+|      | Planning and landscape                                        |
++------+---------------------------------------------------------------+
+| TC5  | Công nghệ kỹ thuật                                            |
+|      |                                                               |
+|      | Building technology and engineering                           |
++------+---------------------------------------------------------------+
+| TC6  | Vật liệu và cấu tạo                                           |
+|      |                                                               |
+|      | Materials and construction detailing                          |
++------+---------------------------------------------------------------+
+| TC7  | Kiến trúc xanh                                                |
+|      |                                                               |
+|      | Green architecture                                            |
++------+---------------------------------------------------------------+
+| TC8  | Lan tỏa cộng đồng                                             |
+|      |                                                               |
+|      | Community impact                                              |
++------+---------------------------------------------------------------+
+| TC9  | Thể hiện và bảo vệ                                            |
+|      |                                                               |
+|      | Design communication and oral defense                         |
++------+---------------------------------------------------------------+
+
+09 Đối sánh
+
+09 Benchmarking
+
+Cơ sở khoa học và đối sánh
+
+Research foundations and benchmarking
+
+Mọi thành phần trong thiết kế của DAU đều đã có tiền lệ trên thế giới. Vì vậy, lợi thế không đến từ tên gọi AI-native, mà từ chất lượng tích hợp.
+
+Every component of DAU’s design has precedents elsewhere in the world. Its advantage therefore lies in the quality of integration, not in the AI-native label itself.
+
++----------+-------------------------------------------------------------+
+| Số lượng | Phạm vi đối sánh                                            |
+|          |                                                             |
+| Number   | Benchmarking scope                                          |
++:========:+=============================================================+
+| 76       | Hồ sơ trọng điểm tại Việt Nam                               |
+|          |                                                             |
+|          | Priority case profiles in Vietnam                           |
++----------+-------------------------------------------------------------+
+| 100      | Đơn vị đối sánh: 80 quốc tế, 20 Việt Nam                    |
+|          |                                                             |
+|          | Benchmark organizations: 80 international and 20 Vietnamese |
++----------+-------------------------------------------------------------+
+| 14       | Cụm địa lý trên thế giới                                    |
+|          |                                                             |
+|          | Geographic clusters worldwide                               |
++----------+-------------------------------------------------------------+
+| 14       | Tiêu chí học thuật và thể chế                               |
+|          |                                                             |
+|          | Academic and institutional criteria                         |
++----------+-------------------------------------------------------------+
+
+Sáu lợi thế tiềm năng
+
+Six potential advantages
+
+1.  Nhất quán giữa giá trị và cơ chế vận hành.
+
+  Consistency between values and operating mechanisms.
+
+2.  Truy vết tới từng thiếu hụt năng lực.
+
+  Traceability down to individual competency gaps.
+
+3.  Tách học tập khỏi công nhận chính thức.
+
+  A clear distinction between learning and formal recognition of attainment.
+
+4.  Chuẩn chung, đường đi linh hoạt.
+
+  Common standards with flexible learning pathways.
+
+5.  Hồ sơ năng lực sống — Living Portfolio.
+
+  A continually updated record of competence: the Living Portfolio.
+
+6.  Studio liên ngành gắn đặc trưng Kiến trúc – Xây dựng – Thiết kế.
+
+  Interdisciplinary studios grounded in DAU’s distinctive strengths in architecture, construction, and design.
+
+Đây là nhận định về chất lượng và tiềm năng thiết kế, chưa phải kết luận DAU đã có kết quả vượt trội.
+
+These are assessments of the design’s quality and potential, not conclusions that DAU has already achieved superior outcomes.
+
+10 Nguyên tắc vận hành
+
+10 Operating principles
+
+Con người quyết định
+
+People make the decisions
+
+Human-in-command là nguyên tắc quản trị; human-in-the-loop là cơ chế thực thi.
+
+Human-in-command is the governance principle; human-in-the-loop is the mechanism for putting it into practice.
+
+Học thuật dẫn dắt
+
+Academic priorities lead
+
+Công nghệ đi sau mục tiêu học thuật, không ngược lại.
+
+Technology serves academic goals, not the other way around.
+
+Lõi ổn định, biên linh hoạt
+
+A stable core with room for flexible experimentation
+
+Lõi giữ sứ mạng, 5T, OBE/VQF và quản trị; biên thử nghiệm nhanh micro-credentials, studio liên ngành.
+
+The core preserves the mission, 5T, OBE/VQF, and governance. Flexible areas enable rapid experimentation with microcredentials and interdisciplinary studios.
+
+DAU sở hữu tri thức lõi
+
+DAU owns its core institutional knowledge
+
+Theo mô hình Build–Buy–Partner, DAU giữ chuẩn, rubric và dữ liệu minh chứng.
+
+Under the Build–Buy–Partner model, DAU retains ownership of its standards, rubrics, and evidence data.
+
+Dữ liệu sạch trước
+
+Clean data come first
+
+Không mở rộng sớm khi dữ liệu chưa sạch và minh chứng chưa xác thực.
+
+Do not scale prematurely while data quality remains inadequate or evidence has not been validated.
+
+Công bố có minh chứng
+
+Evidence supports every public claim
+
+Chỉ công bố mức triển khai và kết quả có bằng chứng.
+
+Report only implementation levels and results that are supported by evidence.
+
+Chiến lược phát triển DAU 2026–2030, tầm nhìn 2050
+
+DAU Development Strategy 2026–2030 with a vision to 2050
+
+“Lấy con người làm trung tâm, lấy 5T làm bản sắc, lấy năng lực thực chứng làm thước đo, lấy dữ liệu và AI làm hạ tầng trí tuệ, lấy chất lượng thật làm cam kết dài hạn.”
+
+“Place people at the center, define our identity through 5T, measure success through demonstrated competence, build our intelligence infrastructure on data and AI, and commit to genuine quality over the long term.”
+
+— Chiến lược phát triển DAU 2026–2030, tầm nhìn 2050
+
+— DAU Development Strategy 2026–2030, with a vision to 2050
+
+Nội dung chân trang
+
+Website footer
+
+Hệ thống này thuộc sở hữu của Trường Đại học Kiến trúc Đà Nẵng.
+
+This system is owned by Danang Architecture University.
+
+Đại học AI-native
+
+AI-native University
+
+Tổng quan · Triết lý 5T · Mô hình · Copilot · Lộ trình · Đối sánh
+
+Overview · 5T Philosophy · The Model · Copilots · Roadmap · Benchmarking
+
+DAU
+566 Núi Thành, phường Hoà Cường, TP. Đà Nẵng
+
+DAU
+566 Nui Thanh Street, Hoa Cuong Ward, Da Nang, Vietnam
+
+dau.edu.vn
+
+Nội dung tóm lược từ hồ sơ Đề án AI-native University trình Hội đồng trường năm 2026. Các mốc và chỉ tiêu là đề xuất, chưa phải cam kết.
+
+This content summarizes the AI-native University initiative documentation submitted to the University Council in 2026. The milestones and targets are proposals, not commitments.
+
+© 2026 Trường Đại học Kiến trúc Đà Nẵng (DAU)
+
+© 2026 Danang Architecture University (DAU)
+
+Về đầu trang ↑
+
+Back to top ↑
+
+Màn hình truy cập và nội dung điều hướng
+
+Access screen and navigation text
+
++-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| Thành phần giao diện    | Nội dung Việt – Anh                                                                                                                         |
+|                         |                                                                                                                                             |
+| Interface element       | Vietnamese–English content                                                                                                                  |
++=========================+=============================================================================================================================================+
+| Tiêu đề trình duyệt     | Đề án AI-native University | Đại học Kiến trúc Đà Nẵng                                                                                      |
+|                         |                                                                                                                                             |
+| Browser title           | AI-native University Initiative | Danang Architecture University                                                                            |
++-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| Tiêu đề chào mừng       | Chào mừng                                                                                                                                   |
+|                         |                                                                                                                                             |
+| Welcome heading         | Welcome                                                                                                                                     |
++-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| Lời chào mừng           | Đây là không gian trình bày Đề án AI-native University của Trường Đại học Kiến trúc Đà Nẵng. Vui lòng nhập mã truy cập để tiếp tục.         |
+|                         |                                                                                                                                             |
+| Welcome message         | Welcome to the presentation of Danang Architecture University’s AI-native University initiative. Please enter your access code to continue. |
++-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| Ô nhập mã và gợi ý      | Mã truy cập / Nhập mã                                                                                                                       |
+|                         |                                                                                                                                             |
+| Access field and prompt | Access code / Enter code                                                                                                                    |
++-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| Nút truy cập            | Vào xem                                                                                                                                     |
+|                         |                                                                                                                                             |
+| Entry button            | Enter                                                                                                                                       |
++-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| Ghi chú mã truy cập     | Mã truy cập được gửi kèm lời mời.                                                                                                           |
+|                         |                                                                                                                                             |
+| Access code note        | Your access code is included in your invitation.                                                                                            |
++-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| Nút điều hướng          | Trước / Tiếp                                                                                                                                |
+|                         |                                                                                                                                             |
+| Navigation buttons      | Previous / Next                                                                                                                             |
++-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| Hướng dẫn bàn phím      | ↑ ↓ chuyển phần · ← → xem chi tiết                                                                                                          |
+|                         |                                                                                                                                             |
+| Keyboard instructions   | ↑ ↓ Navigate sections · ← → View details                                                                                                    |
++-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+
+Ghi chú thuật ngữ dịch thuật
+
+Translation terminology notes
+
+Các ghi chú dưới đây dành cho việc rà soát bản dịch; không phải nội dung bổ sung vào đề án hoặc vào các chỉ tiêu của trang web.
+
+The following notes support translation review; they do not add content to the initiative or to the website’s targets.
+
+Thực chất – Thực tài – Kiến tạo tương lai
+
+Substance – Proven Capability – Shaping the Future
+
+Substance – Proven Capability – Shaping the Future. “Substance” nhấn mạnh giá trị thực chất; “Proven Capability” nhấn mạnh năng lực thực sự được chứng minh.
+
+Substance – Proven Capability – Shaping the Future. “Substance” emphasizes substantive value; “Proven Capability” emphasizes competence that has actually been demonstrated.
+
+Năng lực thực chứng
+
+Demonstrated competence
+
+Demonstrated competence. Khi nói về nhiều năng lực cụ thể, dùng “demonstrated competencies”. Không hiểu là năng lực do AI tự xác nhận.
+
+Demonstrated competence. Use “demonstrated competencies” when referring to multiple specific competencies. The term does not mean competence that AI has certified on its own.
+
+Giá trị học hiệu
+
+Institutional values
+
+Institutional values. Nội hàm là các giá trị làm nên bản sắc và dấu ấn của người học DAU.
+
+Institutional values. These values define DAU’s identity and the distinctive qualities of its learners.
+
+Các nhãn tiếng Anh của ba tầng 5T
+
+The English labels for the three dimensions of 5T
+
+Giữ các nhãn T trên trang gốc. Cột “Meaning” diễn giải nội hàm tiếng Việt; không coi từng nhãn T là bản dịch từ điển tương đương hoàn toàn.
+
+Retain the T labels on the original website. The “Meaning” column explains their Vietnamese sense; the individual T labels are not exact dictionary equivalents.
+
+Thực chiến / Test
+
+Performance in real-world settings / Test
+
+Performance in real-world settings. “Test” là nhãn của 5T, không chỉ có nghĩa là thi hoặc làm bài kiểm tra.
+
+Performance in real-world settings. “Test” is a 5T label; it is not limited to taking examinations or completing tests.
+
+Kiểm định sống
+
+Continuous accreditation readiness
+
+Continuous accreditation readiness. Diễn đạt trạng thái duy trì minh chứng cập nhật và sẵn sàng phục vụ kiểm định, tránh gây hiểu nhầm rằng đã có công nhận kiểm định liên tục.
+
+Continuous accreditation readiness. This wording describes the maintenance of current evidence and readiness for accreditation, avoiding the implication that continuous accreditation has already been awarded.
+
+Giảng viên cơ hữu
+
+Full-time faculty members
+
+Full-time faculty members. Không dùng “tenured faculty”, vì “cơ hữu” không đồng nghĩa với chế độ tenure của Hoa Kỳ.
+
+Full-time faculty members. Do not use “tenured faculty,” because the Vietnamese term “cơ hữu” is not equivalent to the U.S. tenure system.
+
+Khoa trong hệ thống IQA
+
+Academic units within the IQA system
+
+Academic unit. Chỉ cấp đơn vị học thuật; tránh dùng “faculty” đơn lẻ khiến người đọc Mỹ hiểu nhầm thành đội ngũ giảng viên.
+
+Academic unit. This denotes an organizational level; using “faculty” alone could lead U.S. readers to understand it as the teaching staff.
+
+Hội đồng trường
+
+University Council
+
+University Council. Giữ đúng tên gọi loại thiết chế quản trị trong bối cảnh DAU.
+
+University Council. This preserves the designation of the governing body in DAU’s context.
+
+TC1–TC9
+
+Giữ nguyên mã tiêu chuẩn của bản gốc để đối chiếu với rubric và hệ thống minh chứng.
+
+Retain the original standard codes so they can be cross-referenced with the rubric and the evidence system.
+
+Thể hiện và bảo vệ đồ án
+
+Design communication and oral defense
+
+Design communication and oral defense. “Defense” là bảo vệ học thuật, không phải bảo vệ an ninh.
+
+Design communication and oral defense. “Defense” refers to an academic defense, not physical protection or security.
+
+Danh mục từ viết tắt và thuật ngữ chính
+
+Key abbreviations and terms
+
++--------------------------------+----------------------------------------------------------------------------------------------------+
+| Thuật ngữ                      | Ý nghĩa trong bản dịch                                                                             |
+|                                |                                                                                                    |
+| Term                           | Meaning in this translation                                                                        |
++================================+====================================================================================================+
+| AI                             | Trí tuệ nhân tạo                                                                                   |
+|                                |                                                                                                    |
+|                                | Artificial intelligence                                                                            |
++--------------------------------+----------------------------------------------------------------------------------------------------+
+| DAU                            | Trường Đại học Kiến trúc Đà Nẵng                                                                   |
+|                                |                                                                                                    |
+|                                | Danang Architecture University                                                                     |
++--------------------------------+----------------------------------------------------------------------------------------------------+
+| OBE                            | Đào tạo theo chuẩn đầu ra                                                                          |
+|                                |                                                                                                    |
+|                                | Outcome-based education                                                                            |
++--------------------------------+----------------------------------------------------------------------------------------------------+
+| CBE                            | Đào tạo dựa trên năng lực                                                                          |
+|                                |                                                                                                    |
+|                                | Competency-based education                                                                         |
++--------------------------------+----------------------------------------------------------------------------------------------------+
+| VQF                            | Khung trình độ quốc gia Việt Nam                                                                   |
+|                                |                                                                                                    |
+|                                | Vietnam Qualifications Framework                                                                   |
++--------------------------------+----------------------------------------------------------------------------------------------------+
+| IQA                            | Đảm bảo chất lượng bên trong                                                                       |
+|                                |                                                                                                    |
+|                                | Internal quality assurance                                                                         |
++--------------------------------+----------------------------------------------------------------------------------------------------+
+| PDCA                           | Lập kế hoạch – Thực hiện – Kiểm tra – Hành động                                                    |
+|                                |                                                                                                    |
+|                                | Plan–Do–Check–Act                                                                                  |
++--------------------------------+----------------------------------------------------------------------------------------------------+
+| CQI                            | Cải tiến chất lượng liên tục                                                                       |
+|                                |                                                                                                    |
+|                                | Continuous quality improvement                                                                     |
++--------------------------------+----------------------------------------------------------------------------------------------------+
+| BIM                            | Mô hình hóa thông tin công trình                                                                   |
+|                                |                                                                                                    |
+|                                | Building information modeling                                                                      |
++--------------------------------+----------------------------------------------------------------------------------------------------+
+| UX/UI                          | Trải nghiệm người dùng và giao diện người dùng                                                     |
+|                                |                                                                                                    |
+|                                | User experience and user interface                                                                 |
++--------------------------------+----------------------------------------------------------------------------------------------------+
+| Hồ sơ năng lực sống            | Hồ sơ được cập nhật liên tục về năng lực và minh chứng của người học                               |
+|                                |                                                                                                    |
+| Living Portfolio               | A continually updated record of a learner’s competence and supporting evidence                     |
++--------------------------------+----------------------------------------------------------------------------------------------------+
+| Bộ não thứ hai                 | Hạ tầng tri thức và trí nhớ thể chế của DAU                                                        |
+|                                |                                                                                                    |
+| Second Brain                   | DAU’s institutional memory and knowledge infrastructure                                            |
++--------------------------------+----------------------------------------------------------------------------------------------------+
+| Đồ thị tri thức                | Biểu diễn có cấu trúc về tri thức và các quan hệ giữa những thành phần của tri thức                |
+|                                |                                                                                                    |
+| Knowledge Graph                | A structured representation of knowledge and the relationships among its elements                  |
++--------------------------------+----------------------------------------------------------------------------------------------------+
+| Mô hình thế giới               | Các mô hình mô tả hành vi của hệ thống, phục vụ mô phỏng và dự báo                                 |
+|                                |                                                                                                    |
+| World Models                   | Models used to represent system behavior and support simulation and prediction                     |
++--------------------------------+----------------------------------------------------------------------------------------------------+
+| Đại học bản sao số             | Biểu diễn số của trường đại học phục vụ phân tích, mô phỏng và cải tiến                            |
+|                                |                                                                                                    |
+| Digital Twin University        | A digital representation of the university used to support analysis, simulation, and improvement   |
++--------------------------------+----------------------------------------------------------------------------------------------------+
+| Con người nắm quyền quyết định | Con người giữ quyền quản trị và trách nhiệm cuối cùng                                              |
+|                                |                                                                                                    |
+| Human-in-command               | People retain governing authority and final responsibility                                         |
++--------------------------------+----------------------------------------------------------------------------------------------------+
+| Con người trong vòng lặp       | Con người tham gia các bước rà soát, phê duyệt và giám sát được xác định                           |
+|                                |                                                                                                    |
+| Human-in-the-loop              | People participate in designated review, approval, and oversight steps                             |
++--------------------------------+----------------------------------------------------------------------------------------------------+
+| Đánh giá kháng AI              | Đánh giá được thiết kế để xác định năng lực thực sự của người học trong bối cảnh có các công cụ AI |
+|                                |                                                                                                    |
+| AI-resistant assessment        | Assessment designed to establish learners’ own competence when AI tools are available              |
++--------------------------------+----------------------------------------------------------------------------------------------------+

@@ -5,7 +5,8 @@ import { sectionIds } from "./Header";
 export function Footer({ t }: { t: Dict }) {
   return (
     <footer className="overflow-hidden bg-ink text-white">
-      <div className="mx-auto max-w-site px-4 pt-10 sm:px-6 lg:px-8 lg:pt-12">
+      {/* lg:pr-16 keeps the text clear of the slide rail, as on the other slides. */}
+      <div className="mx-auto max-w-site px-4 pt-10 sm:px-6 lg:px-8 lg:pr-16 lg:pt-12 [@media(max-height:52rem)]:lg:pt-8">
         <div className="grid gap-10 lg:grid-cols-4 lg:gap-x-6">
           <div className="lg:col-span-2">
             <Image src="/images/logo-dau.png" alt="DAU" width={56} height={57} />
@@ -13,7 +14,7 @@ export function Footer({ t }: { t: Dict }) {
           </div>
           <div className="text-[0.9375rem]">
             <p className="text-sm text-white/60">{t.brand.project}</p>
-            <ul className="mt-4 space-y-2">
+            <ul className="mt-4 space-y-2 lg:grid lg:grid-cols-2 lg:gap-x-6 lg:gap-y-2 lg:space-y-0">
               {sectionIds.map((id) => (
                 <li key={id}>
                   <a href={`#${id}`} className="hover:underline">

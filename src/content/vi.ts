@@ -6,8 +6,10 @@ const vi: Dict = {
     description:
       "Đề án chiến lược 2026–2031 xây dựng mô hình AI-native Competency-Based 5T University của Trường Đại học Kiến trúc Đà Nẵng (DAU).",
   },
-  brand: { project: "AI-native University", school: "Đại học Kiến trúc Đà Nẵng" },
+  brand: { project: "Đại học AI-native", school: "Đại học Kiến trúc Đà Nẵng" },
   nav: {
+    why: "Vì sao",
+    book: "Xem dạng sách",
     overview: "Tổng quan",
     philosophy: "Triết lý 5T",
     model: "Mô hình",
@@ -20,22 +22,73 @@ const vi: Dict = {
   hero: {
     eyebrow: "Đề án chiến lược 2026–2031",
     title: ["Đại học AI-native", "lấy con người làm trung tâm"],
-    model: "AI-native Competency-Based 5T University",
+    model: "Đại học AI-native dựa trên năng lực theo mô hình 5T",
     lead:
       "DAU không “AI hóa đại học” theo nghĩa bề mặt. DAU thiết kế lại mô hình đại học theo hướng AI-native, lấy con người, triết lý 5T, OBE/VQF, năng lực thực chứng và chất lượng làm trung tâm.",
     cta: "Khám phá đề án",
     stats: [
-      { value: "9", label: "lớp thiết kế tích hợp" },
+      { value: "9", label: "Lớp thiết kế tích hợp" },
       { value: "4", label: "Copilot lõi" },
-      { value: "5", label: "cấp độ trưởng thành" },
-      { value: "2031", label: "mục tiêu AI-native" },
+      { value: "5", label: "Cấp độ trưởng thành" },
+      { value: "2031", label: "Mục tiêu AI-native" },
     ],
   },
-  overview: {
-    label: "01 — Tổng quan",
-    title: "Một chương trình chuyển đổi đại học, không phải một dự án phần mềm",
+  why: {
+    label: "01 — Vì sao",
+    title: "Vì sao DAU cần đề án AI-native",
     lead:
-      "Đề án không phải là mua chatbot hay phần mềm quản lý. Đây là việc đưa DAU trở thành một hệ sinh thái đại học vận hành bằng dữ liệu, chuẩn đầu ra, năng lực thực chứng và AI — trong khi con người vẫn là chủ thể ra quyết định cuối cùng.",
+      "AI không còn chỉ hỗ trợ từng tác vụ nhỏ mà đang tác động đến toàn bộ chuỗi giá trị của đại học. Chỉ thêm chatbot vào LMS hay dùng AI soạn bài giảng mới là AI-assisted, chưa phải AI-native.",
+    paths: [
+      {
+        tag: "Con đường 1",
+        title: "Tiếp tục phát triển rời rạc",
+        text: "Mỗi phòng ban một phần mềm, mỗi khoa một cách làm, mỗi chương trình một ma trận chuẩn đầu ra, mỗi đợt kiểm định lại gom minh chứng thủ công.",
+        result: "Kết quả: những “ốc đảo dữ liệu”, không đủ sức bảo đảm chất lượng, cá nhân hóa học tập hay tạo lợi thế dài hạn.",
+        strong: "“ốc đảo dữ liệu”",
+      },
+      {
+        tag: "Lựa chọn của DAU",
+        title: "Tích hợp thành một hệ sinh thái AI-native",
+        text: "Chuẩn đầu ra là xương sống, năng lực thực chứng là mục tiêu, dữ liệu là hạ tầng, AI là lớp hỗ trợ hành động.",
+        result: "Kết quả: một thiết kế thống nhất, trong đó con người quyết định.",
+        strong: "con người quyết định",
+      },
+    ],
+    table: {
+      head: ["Vấn đề hiện tại", "Hệ quả nếu không xử lý", "Hướng giải quyết trong đề án"],
+      rows: [
+        {
+          problem: "Dữ liệu đào tạo, khảo thí, LMS, portfolio và kiểm định còn phân tán",
+          effect: "Khó đo mức đạt chuẩn đầu ra, khó truy xuất minh chứng, khó ra quyết định nhanh",
+          answer: "Lõi OBE/CBE, Bộ não thứ hai và quản trị dữ liệu",
+          codes: ["5D", "5F"],
+        },
+        {
+          problem: "AI dễ bị dùng như công cụ rời rạc",
+          effect: "Chatbot hóa bề mặt, không tạo thay đổi chất lượng thật",
+          answer: "Điều phối tác nhân AI có con người trong vòng lặp",
+          codes: ["5H"],
+        },
+        {
+          problem: "Đánh giá truyền thống dễ bị AI thay thế",
+          effect: "Điểm số không còn phản ánh đầy đủ năng lực thật",
+          answer: "Đánh giá kháng AI gắn quá trình, sản phẩm, bảo vệ và hồ sơ năng lực sống",
+          codes: ["5I"],
+        },
+        {
+          problem: "Kiểm định còn nặng gom hồ sơ theo kỳ",
+          effect: "Minh chứng thiếu tính sống, khó đóng vòng cải tiến PDCA",
+          answer: "Minh chứng sống và sẵn sàng kiểm định liên tục",
+          codes: ["5I"],
+        },
+        {
+          problem: "Sinh viên cần lộ trình cá nhân hóa",
+          effect: "Dễ học thụ động, thiếu hỗ trợ đúng lúc",
+          answer: "Gia sư AI theo bản đồ năng lực",
+          codes: ["5E"],
+        },
+      ],
+    },
     drivers: [
       {
         title: "Công nghệ tái cấu trúc giáo dục",
@@ -54,6 +107,12 @@ const vi: Dict = {
         text: "Hướng phát triển chuyển từ quy mô sang năng lực, dữ liệu, chất lượng và đổi mới sáng tạo.",
       },
     ],
+  },
+  overview: {
+    label: "02 — Tổng quan",
+    title: "Một chương trình chuyển đổi đại học, không phải một dự án phần mềm",
+    lead:
+      "Đề án không phải là mua chatbot hay phần mềm quản lý. Đây là việc đưa DAU trở thành một hệ sinh thái đại học vận hành bằng dữ liệu, chuẩn đầu ra, năng lực thực chứng và AI — trong khi con người vẫn là chủ thể ra quyết định cuối cùng.",
     facts: [
       { value: "2006", title: "Nền tảng", text: "Gần 20 năm xây dựng và phát triển." },
       { value: "6 năm", title: "2026–2031", text: "Dự án chiến lược trọng điểm của DAU." },
@@ -63,7 +122,7 @@ const vi: Dict = {
   },
   motto: { label: "Tôn chỉ", text: "Thực chất – Thực tài – Kiến tạo tương lai" },
   philosophy: {
-    label: "02 — Bản sắc",
+    label: "03 — Bản sắc",
     title: "Ba tầng 5T",
     lead:
       "5T là bản sắc của DAU, được tách thành ba tầng riêng biệt: triết lý định hướng, phương thức giáo dục và giá trị học hiệu. AI-native chỉ là hạ tầng để hiện thực hóa các giá trị này.",
@@ -108,24 +167,24 @@ const vi: Dict = {
     },
   },
   model: {
-    label: "03 — Mô hình",
+    label: "04 — Mô hình",
     title: "Một thiết kế tích hợp, chín lớp",
     lead:
       "Mô hình AI-native Competency-Based DAU được xây từ chín lớp, đi từ giá trị con người đến hạ tầng trí tuệ và chất lượng — một thiết kế thống nhất thay vì các công cụ rời rạc.",
     layers: [
-      { code: "5A", name: "Human-centred 5T", text: "Con người là trung tâm; AI không thay thế giảng viên." },
+      { code: "5A", name: "5T lấy con người làm trung tâm", text: "Con người là trung tâm; AI không thay thế giảng viên." },
       { code: "5B", name: "OBE/VQF", text: "Đào tạo theo chuẩn đầu ra, khớp Khung trình độ quốc gia Việt Nam." },
-      { code: "5C", name: "AI-Native CBE Ecosystem", text: "Biến chuẩn đầu ra thành năng lực có thể quan sát, đo lường, chứng minh và cải tiến." },
-      { code: "5D", name: "OBE/CBE Core", text: "Xương sống dữ liệu học thuật của toàn trường." },
-      { code: "5E", name: "Competency Map", text: "Năng lực mô tả bằng hành vi quan sát được, gắn minh chứng, rubric và mức thành thạo." },
-      { code: "5F", name: "Second Brain & Governance", text: "Trí nhớ thể chế, Knowledge Graph và quản trị dữ liệu – AI." },
-      { code: "5G", name: "AI Infrastructure Efficiency", text: "Điều phối mô hình, kiểm soát chi phí; thay mô hình mà không phá dữ liệu nền." },
-      { code: "5H", name: "Agentic Orchestration", text: "Điều phối các tác nhân AI có phân quyền, nhật ký kiểm toán và con người trong vòng lặp." },
-      { code: "5I", name: "World Models, Evidence & Quality Intelligence", text: "Digital Twin University, Learning Analytics, Living Portfolio, PDCA/CQI và kiểm định sống." },
+      { code: "5C", name: "Hệ sinh thái CBE AI-native", text: "Biến chuẩn đầu ra thành năng lực có thể quan sát, đo lường, chứng minh và cải tiến." },
+      { code: "5D", name: "Lõi OBE/CBE", text: "Xương sống dữ liệu học thuật của toàn trường." },
+      { code: "5E", name: "Bản đồ năng lực", text: "Năng lực mô tả bằng hành vi quan sát được, gắn minh chứng, rubric và mức thành thạo." },
+      { code: "5F", name: "Bộ não thứ hai và quản trị", text: "Trí nhớ thể chế, Knowledge Graph và quản trị dữ liệu – AI." },
+      { code: "5G", name: "Hiệu quả hạ tầng AI", text: "Điều phối mô hình, kiểm soát chi phí; thay mô hình mà không phá dữ liệu nền." },
+      { code: "5H", name: "Điều phối tác nhân AI", text: "Điều phối các tác nhân AI có phân quyền, nhật ký kiểm toán và con người trong vòng lặp." },
+      { code: "5I", name: "Mô hình thế giới, minh chứng và trí tuệ chất lượng", text: "Digital Twin University, Learning Analytics, Living Portfolio, PDCA/CQI và kiểm định sống." },
     ],
   },
   copilots: {
-    label: "04 — Copilot",
+    label: "05 — Copilot",
     title: "Bốn Copilot lõi, một nền tảng chung",
     lead:
       "Agentic AI không phải một chatbot đơn lẻ, mà là hệ sinh thái tác nhân có phân quyền, kiểm soát và trách nhiệm giải trình. Mỗi Copilot có giới hạn rõ ràng.",
@@ -133,35 +192,35 @@ const vi: Dict = {
     guardLabel: "Giới hạn",
     items: [
       {
-        name: "AI Tutor",
+        name: "Gia sư AI",
         for: "Sinh viên",
         does: "Đồng hành học tập theo bản đồ năng lực, gợi ý luyện tập và phản hồi.",
         guard: "Không làm bài thay sinh viên.",
       },
       {
-        name: "Faculty Copilot",
+        name: "Copilot dành cho giảng viên",
         for: "Giảng viên",
         does: "Hỗ trợ thiết kế học phần, rubric, học liệu và phản hồi cho người học.",
         guard: "Không thay quyền chuyên môn của giảng viên.",
       },
       {
-        name: "Research Copilot",
+        name: "Copilot hỗ trợ nghiên cứu",
         for: "Nhà nghiên cứu",
         does: "Hỗ trợ tổng quan tài liệu, quản lý dữ liệu và quy trình công bố.",
         guard: "Không viết bài thay, không bịa dữ liệu.",
       },
       {
-        name: "Admin Copilot",
+        name: "Copilot hỗ trợ quản trị",
         for: "Quản trị",
         does: "Hỗ trợ quy trình, báo cáo, theo dõi chất lượng và kiểm định.",
         guard: "Không tự quyết học vụ, tài chính, nhân sự, kiểm định.",
       },
     ],
     foundation: "Cả bốn dùng chung Second Brain, Knowledge Graph, OBE/CBE Core và Data/AI Governance.",
-    quote: ["Second Brain giúp DAU nhớ đúng", "World Models giúp DAU dự báo tốt hơn", "Con người quyết định"],
+    quote: ["Second Brain giúp DAU nhớ đúng.", "World Models giúp DAU dự báo tốt hơn.", "Con người quyết định."],
   },
   maturity: {
-    label: "05 — Trưởng thành",
+    label: "06 — Trưởng thành",
     title: "Năm cấp độ trưởng thành",
     lead: "Mỗi cấp độ là một điều kiện cần cho cấp tiếp theo. DAU tiến từng bước, đo thật trước khi mở rộng.",
     levels: [
@@ -174,23 +233,23 @@ const vi: Dict = {
     target: "Mục tiêu: hướng tới cấp độ 5 vào năm 2031.",
   },
   roadmap: {
-    label: "06 — Lộ trình",
+    label: "07 — Lộ trình",
     title: "Lộ trình 2026–2031",
     lead: "Công nghệ đi sau mục tiêu học thuật. Mỗi giai đoạn chỉ mở rộng khi dữ liệu và minh chứng đã đủ tin cậy.",
     phases: [
       { when: "100 ngày đầu", name: "Khởi động", text: "Thành lập Ban Chỉ đạo, chọn chương trình đào tạo thí điểm, Second Brain v1." },
-      { when: "2026", name: "AI-ready & CBE-ready", text: "Thí điểm OBE/CBE Core và Competency Map; ban hành chính sách dữ liệu và AI." },
-      { when: "2027", name: "AI-integrated & CBE-integrated", text: "Thí điểm AI Tutor, Faculty Copilot, Research Copilot; triển khai Living Portfolio." },
-      { when: "2028–2029", name: "AI-driven CBE DAU", text: "Mở rộng Agentic AI; Digital Twin cấp sinh viên, học phần, chương trình; kiểm định sống." },
-      { when: "2030–2031", name: "AI-native core completion", text: "Hệ sinh thái đa tác nhân, Digital Twin toàn trường, học tập suốt đời." },
-      { when: "Sau 2031", name: "AI-native scaling & maturity", text: "Mở rộng toàn trường và tối ưu vận hành." },
+      { when: "2026", name: "Sẵn sàng cho AI và CBE", text: "Thí điểm OBE/CBE Core và Competency Map; ban hành chính sách dữ liệu và AI." },
+      { when: "2027", name: "Tích hợp AI và CBE", text: "Thí điểm AI Tutor, Faculty Copilot, Research Copilot; triển khai Living Portfolio." },
+      { when: "2028–2029", name: "DAU đào tạo theo năng lực với AI dẫn dắt", text: "Mở rộng Agentic AI; Digital Twin cấp sinh viên, học phần, chương trình; kiểm định sống." },
+      { when: "2030–2031", name: "Hoàn thiện lõi AI-native", text: "Hệ sinh thái đa tác nhân, Digital Twin toàn trường, học tập suốt đời." },
+      { when: "Sau 2031", name: "Mở rộng và nâng mức trưởng thành AI-native", text: "Mở rộng toàn trường và tối ưu vận hành." },
     ],
     principle: "Bắt đầu nhỏ, đo thật, cải tiến nhanh, mở rộng có kiểm soát.",
     note: "Các mốc là khung đề xuất; việc chuyển giai đoạn dựa trên Chỉ số trưởng thành dữ liệu và Chỉ số xác thực minh chứng.",
   },
   targets: {
-    label: "Mục tiêu đến 2030",
-    title: "Chỉ tiêu đề xuất",
+    label: "Chỉ tiêu",
+    title: "Chỉ tiêu đề xuất đến năm 2030",
     note: "Theo Chiến lược phát triển 2026–2030. Kết quả chỉ được công bố khi có minh chứng.",
     items: [
       { value: "100%", label: "Chương trình đào tạo được rà soát theo chuẩn đầu ra, VQF và kiểm định" },
@@ -201,46 +260,46 @@ const vi: Dict = {
     ],
   },
   pillars: {
-    label: "07 — Trụ cột",
+    label: "08 — Trụ cột",
     title: "Bảy trụ cột chiến lược",
     lead: "Tất cả trụ cột đứng trên một nền chung: giá trị 5T và đào tạo theo chuẩn đầu ra OBE/VQF.",
     items: [
       { title: "Đào tạo", text: "Chương trình theo năng lực, studio hóa, Living Portfolio." },
       { title: "Khoa học công nghệ – AI", text: "Research Copilot và quy trình công bố minh bạch." },
       { title: "Cộng đồng", text: "Học tập phục vụ cộng đồng, kết nối địa phương." },
-      { title: "Hợp tác quốc tế & truyền thông", text: "Truyền thông giá trị đầu tư giáo dục, mở rộng đối tác." },
+      { title: "Hợp tác quốc tế và truyền thông", text: "Truyền thông giá trị đầu tư giáo dục, mở rộng đối tác." },
       { title: "Đội ngũ", text: "Bồi dưỡng năng lực OBE, AI-readiness cho giảng viên." },
-      { title: "Tài chính & cơ sở vật chất", text: "Hạ tầng AI, cơ sở 2, đa dạng nguồn lực." },
-      { title: "Chất lượng & IQA", text: "Đảm bảo chất lượng bên trong ở 4 cấp: Trường, Khoa, Chương trình, Học phần." },
+      { title: "Tài chính và cơ sở vật chất", text: "Hạ tầng AI, cơ sở 2, đa dạng nguồn lực." },
+      { title: "Chất lượng và IQA", text: "Đảm bảo chất lượng bên trong ở 4 cấp: Trường, Khoa, Chương trình, Học phần." },
     ],
-    crossTitle: "Ưu tiên liên ngành Design × Domain",
+    crossTitle: "Ưu tiên liên ngành Thiết kế × Lĩnh vực chuyên môn",
     cross: [
-      "Smart City, Urban Design & Digital Twin",
-      "Green Architecture & Sustainable Construction",
-      "BIM, Construction Management & Project Finance",
-      "UX/UI, Digital Product & Visual Communication",
+      "Đô thị thông minh, thiết kế đô thị và bản sao số",
+      "Kiến trúc xanh và xây dựng bền vững",
+      "BIM, quản lý xây dựng và tài chính dự án",
+      "UX/UI, sản phẩm số và truyền thông thị giác",
     ],
   },
   studio: {
-    label: "08 — Thí điểm",
+    label: "09 — Thí điểm",
     title: "Studio đồ án kiến trúc",
     lead:
       "Rubric 9 tiêu chuẩn cho đồ án kiến trúc là sản phẩm thí điểm đầu tiên. AI được dùng có kiểm soát và phải khai báo; sinh viên phải chứng minh được năng lực cá nhân. Yếu tố kháng AI được lồng vào xuyên suốt, không tách thành tiêu chuẩn riêng.",
     badge: "Bản thử nghiệm",
     standards: [
-      "Ý tưởng & sáng tạo",
-      "Bản sắc & bản địa",
-      "Không gian & công năng",
-      "Quy hoạch & cảnh quan",
+      "Ý tưởng và sáng tạo",
+      "Bản sắc và bản địa",
+      "Không gian và công năng",
+      "Quy hoạch và cảnh quan",
       "Công nghệ kỹ thuật",
-      "Vật liệu & cấu tạo",
+      "Vật liệu và cấu tạo",
       "Kiến trúc xanh",
       "Lan tỏa cộng đồng",
-      "Thể hiện & bảo vệ",
+      "Thể hiện và bảo vệ",
     ],
   },
   benchmark: {
-    label: "09 — Đối sánh",
+    label: "10 — Đối sánh",
     title: "Cơ sở khoa học và đối sánh",
     lead:
       "Mọi thành phần trong thiết kế của DAU đều đã có tiền lệ trên thế giới. Vì vậy, lợi thế không đến từ tên gọi AI-native, mà từ chất lượng tích hợp.",
@@ -262,7 +321,7 @@ const vi: Dict = {
     caveat: "Đây là nhận định về chất lượng và tiềm năng thiết kế, chưa phải kết luận DAU đã có kết quả vượt trội.",
   },
   principles: {
-    label: "10 — Nguyên tắc",
+    label: "11 — Nguyên tắc",
     title: "Nguyên tắc vận hành",
     items: [
       { title: "Con người quyết định", text: "Human-in-command là nguyên tắc quản trị; human-in-the-loop là cơ chế thực thi." },
