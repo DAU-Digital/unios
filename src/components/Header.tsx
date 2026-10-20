@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { localeLabels, locales, type Dict, type Locale } from "@/content";
 
-export const sectionIds = ["overview", "philosophy", "model", "copilots", "roadmap", "benchmark"] as const;
+export const sectionIds = ["why", "overview", "philosophy", "model", "copilots", "roadmap", "benchmark"] as const;
 
 export function Header({ t, locale }: { t: Dict; locale: Locale }) {
   const links = sectionIds.map((id) => ({ id, label: t.nav[id] }));

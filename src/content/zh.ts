@@ -6,9 +6,10 @@ const zh: Dict = {
     description:
       "岘港建筑大学（DAU）2026–2031 年战略项目，旨在构建 AI-native Competency-Based 5T University 模式。",
   },
-  translationNote: "本译文尚待审校，以越南语版本为准。",
   brand: { project: "AI-native University", school: "岘港建筑大学" },
   nav: {
+    why: "为何需要",
+    book: "书本视图",
     overview: "概览",
     philosophy: "5T 理念",
     model: "模式",
@@ -32,11 +33,63 @@ const zh: Dict = {
       { value: "2031", label: "AI-native 目标年份" },
     ],
   },
-  overview: {
-    label: "01 — 概览",
-    title: "一项大学转型计划，而非软件项目",
+  why: {
+    label: "01 — 为何需要",
+    title: "DAU为何需要AI原生大学建设方案",
     lead:
-      "本项目不是采购聊天机器人或管理软件，而是推动 DAU 成为一个依靠数据、学习成果、实证能力和 AI 运行的大学生态系统——同时，人始终是最终决策的主体。",
+      "AI已不只是辅助单项小任务，而是正在影响大学的整个价值链。仅在学习管理系统（LMS）中加入聊天机器人，或用AI编写课件，只是“AI辅助”（AI-assisted），而非AI原生。",
+    note: "本部分译文尚待审校。",
+    paths: [
+      {
+        tag: "路径一",
+        title: "继续分散式发展",
+        text: "每个部门一套软件，每个院系一种做法，每个专业一套学习成果矩阵，每轮评估认证都要人工收集证据。",
+        result: "结果是形成“数据孤岛”，无法保障质量，无法实现个性化学习，也无法形成长期优势。",
+        strong: "“数据孤岛”",
+      },
+      {
+        tag: "DAU的选择",
+        title: "整合为统一的AI原生生态系统",
+        text: "以学习成果为主干，以经证据验证的能力为目标，以数据为基础设施，以AI为支持行动的层级。",
+        result: "结果是形成一体化设计，并由人作出决定。",
+        strong: "由人作出决定",
+      },
+    ],
+    table: {
+      head: ["现存问题", "若不解决的后果", "建设方案中的解决路径"],
+      rows: [
+        {
+          problem: "教学、考试、LMS、学习档案和评估认证数据仍然分散",
+          effect: "难以衡量学习成果达成度，难以追溯证据，难以快速决策",
+          answer: "OBE/CBE核心、第二大脑与数据治理",
+          codes: ["5D", "5F"],
+        },
+        {
+          problem: "AI容易被当作零散工具使用",
+          effect: "停留于表面的“聊天机器人化”，无法带来真正的质量提升",
+          answer: "引入人在回路机制的AI智能体编排",
+          codes: ["5H"],
+        },
+        {
+          problem: "传统评价容易被AI替代",
+          effect: "分数不再能充分反映学习者的真实能力",
+          answer: "结合过程、作品、答辩与动态能力档案的防AI替代真实性评价",
+          codes: ["5I"],
+        },
+        {
+          problem: "评估认证仍偏重按周期汇集材料",
+          effect: "证据缺乏时效，PDCA闭环难以形成",
+          answer: "持续更新的证据与面向评估认证的常态化准备机制",
+          codes: ["5I"],
+        },
+        {
+          problem: "学生需要个性化学习路径",
+          effect: "容易被动学习，缺乏及时支持",
+          answer: "依据能力图谱提供支持的AI学习导师",
+          codes: ["5E"],
+        },
+      ],
+    },
     drivers: [
       {
         title: "技术重塑教育",
@@ -55,6 +108,12 @@ const zh: Dict = {
         text: "发展方向正从规模扩张转向能力、数据、质量与创新。",
       },
     ],
+  },
+  overview: {
+    label: "02 — 概览",
+    title: "一项大学转型计划，而非软件项目",
+    lead:
+      "本项目不是采购聊天机器人或管理软件，而是推动 DAU 成为一个依靠数据、学习成果、实证能力和 AI 运行的大学生态系统——同时，人始终是最终决策的主体。",
     facts: [
       { value: "2006", title: "基础", text: "近 20 年的建设与发展。" },
       { value: "6 年", title: "2026–2031", text: "DAU 重点战略项目。" },
@@ -64,7 +123,7 @@ const zh: Dict = {
   },
   motto: { label: "宗旨", text: "实质 – 实才 – 开创未来" },
   philosophy: {
-    label: "02 — 特色",
+    label: "03 — 特色",
     title: "5T 的三个层次",
     lead:
       "5T 是 DAU 的特色与身份，分为三个相互独立的层次：指导理念、培养方式与学校品牌价值。AI-native 只是实现这些价值的基础设施。",
@@ -109,7 +168,7 @@ const zh: Dict = {
     },
   },
   model: {
-    label: "03 — 模式",
+    label: "04 — 模式",
     title: "一体化设计，九个层次",
     lead:
       "AI-native Competency-Based DAU 模式由九个层次构成，从人的价值延伸至智能与质量基础设施——是一个统一的整体设计，而非零散的工具。",
@@ -126,7 +185,7 @@ const zh: Dict = {
     ],
   },
   copilots: {
-    label: "04 — Copilot",
+    label: "05 — Copilot",
     title: "四个核心 Copilot，一个共同基础",
     lead:
       "Agentic AI 不是单一的聊天机器人，而是具备权限管理、控制与问责机制的智能体生态系统。每个 Copilot 都有明确的边界。",
@@ -162,7 +221,7 @@ const zh: Dict = {
     quote: ["Second Brain 让 DAU 记得准确", "World Models 让 DAU 预测得更好", "由人来决定"],
   },
   maturity: {
-    label: "05 — 成熟度",
+    label: "06 — 成熟度",
     title: "五个成熟度等级",
     lead: "每一级都是迈向下一级的必要条件。DAU 稳步推进，在扩展之前如实衡量。",
     levels: [
@@ -175,7 +234,7 @@ const zh: Dict = {
     target: "目标：力争于 2031 年达到第 5 级。",
   },
   roadmap: {
-    label: "06 — 路线图",
+    label: "07 — 路线图",
     title: "2026–2031 路线图",
     lead: "技术服从于学术目标。只有当数据与证据足够可信时，各阶段才会扩展。",
     phases: [
@@ -202,7 +261,7 @@ const zh: Dict = {
     ],
   },
   pillars: {
-    label: "07 — 支柱",
+    label: "08 — 支柱",
     title: "七大战略支柱",
     lead: "所有支柱都建立在共同的基础之上：5T 价值与基于 OBE/VQF 学习成果的培养。",
     items: [
@@ -223,7 +282,7 @@ const zh: Dict = {
     ],
   },
   studio: {
-    label: "08 — 试点",
+    label: "09 — 试点",
     title: "建筑设计工作室",
     lead:
       "建筑设计作业的 9 项标准评分量规是首个试点成果。AI 的使用须受控并如实申报；学生必须证明个人能力。抗 AI 要素贯穿始终，而非单列为一项标准。",
@@ -241,7 +300,7 @@ const zh: Dict = {
     ],
   },
   benchmark: {
-    label: "09 — 对标",
+    label: "10 — 对标",
     title: "科学依据与对标",
     lead:
       "DAU 设计中的每个组成部分在世界上都已有先例。因此，优势并非来自“AI-native”这一名称，而是来自整合的质量。",
@@ -263,7 +322,7 @@ const zh: Dict = {
     caveat: "这是对设计质量与潜力的评估，并不意味着 DAU 已取得卓越成果。",
   },
   principles: {
-    label: "10 — 原则",
+    label: "11 — 原则",
     title: "运行原则",
     items: [
       { title: "由人决定", text: "Human-in-command 是治理原则；human-in-the-loop 是执行机制。" },

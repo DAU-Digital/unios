@@ -19,12 +19,17 @@ type Item = { title: string; text: string };
 type Stat = { value: string; label: string };
 type Term = { name: string; en: string };
 
+// One of the two strategic paths on the Why slide; `strong` is the part of
+// `result` that is emphasised.
+export type WhyPath = { tag: string; title: string; text: string; result: string; strong: string };
+export type WhyRow = { problem: string; effect: string; answer: string; codes: string[] };
+
 export type Dict = {
   meta: { title: string; description: string };
-  // Shown on machine-translated locales until reviewed.
-  translationNote?: string;
   brand: { project: string; school: string };
   nav: {
+    why: string;
+    book: string;
     overview: string;
     philosophy: string;
     model: string;
@@ -42,11 +47,20 @@ export type Dict = {
     cta: string;
     stats: Stat[];
   };
+  why: {
+    label: string;
+    title: string;
+    lead: string;
+    // Translations written for this section, shown until the teacher approves them.
+    note?: string;
+    drivers: Item[];
+    paths: [WhyPath, WhyPath];
+    table: { head: [string, string, string]; rows: WhyRow[] };
+  };
   overview: {
     label: string;
     title: string;
     lead: string;
-    drivers: Item[];
     facts: { value: string; title: string; text: string }[];
   };
   motto: { label: string; text: string };

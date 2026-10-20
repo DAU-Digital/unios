@@ -8,6 +8,7 @@ import { HeroVisual } from "@/components/HeroVisual";
 import { Panels } from "@/components/Panels";
 import { getDict, type Dict, type Locale } from "@/content";
 import { jsonLd, pageMetadata } from "@/lib/seo";
+import { withTail } from "@/lib/text";
 
 const pad = (n: number) => String(n).padStart(2, "0");
 
@@ -29,7 +30,7 @@ function Words({ text, from = 0 }: { text: string; from?: number }) {
 
 type Head = { label: string; title: string; lead?: string };
 
-function SectionHead({ label, title, lead, dark }: Head & { dark?: boolean }) {
+function SectionHead({ label, title, lead, note, dark }: Head & { note?: string; dark?: boolean }) {
   return (
     <div className={`border-t-2 pt-5 ${dark ? "border-white" : "border-ink"}`} data-reveal>
       <p className={`label ${dark ? "!text-white/60" : ""}`}>{label}</p>
@@ -37,9 +38,32 @@ function SectionHead({ label, title, lead, dark }: Head & { dark?: boolean }) {
         <h2 className="d2 lg:col-span-2">
           <Words text={title} />
         </h2>
-        {lead && <p className={`lead lg:col-span-2 lg:pt-2 ${dark ? "!text-white/70" : ""}`}>{lead}</p>}
+        {lead && (
+          <div className="lg:col-span-2 lg:pt-2">
+            <p className={`lead ${dark ? "!text-white/70" : ""}`}>{lead}</p>
+            {/* Translations written for this section, until the teacher approves them. */}
+            {note && (
+              <p data-why-note className="mt-4 inline-block border-l-2 border-brand bg-brand-soft px-4 py-2 text-sm text-brand-deep">
+                {note}
+              </p>
+            )}
+          </div>
+        )}
       </div>
     </div>
+  );
+}
+
+// Emphasises one phrase inside a sentence; plain text when it is not there.
+function Strong({ text, strong, className }: { text: string; strong: string; className: string }) {
+  const at = text.indexOf(strong);
+  if (at < 0) return text;
+  return (
+    <>
+      {text.slice(0, at)}
+      <strong className={`font-semibold ${className}`}>{strong}</strong>
+      {text.slice(at + strong.length)}
+    </>
   );
 }
 
@@ -62,6 +86,7 @@ function Section({
   dark,
   className = "",
   mullions,
+  note,
 }: {
   id: string;
   head: Head;
@@ -70,11 +95,14 @@ function Section({
   dark?: boolean;
   className?: string;
   mullions?: boolean;
+  note?: string;
 }) {
+  // Only the head's own fields: section dicts carry other keys (roadmap.note, …).
+  const sectionHead = <SectionHead label={head.label} title={head.title} lead={head.lead} note={note} dark={dark} />;
   return (
     <Slide id={id} title={head.title} className={className}>
       <Container className={`slide-body ${mullions ? "mullions" : ""}`}>
-        <Panels head={<SectionHead {...head} dark={dark} />} panels={panels} prev={t.deck.prev} next={t.deck.next} />
+        <Panels head={sectionHead} panels={panels} prev={t.deck.prev} next={t.deck.next} />
       </Container>
     </Slide>
   );
@@ -87,11 +115,6 @@ function Hero({ t }: { t: Dict }) {
       {/* On desktop the whole hero fits the first screen below the header. */}
       <Container className="mullions grid gap-10 py-10 lg:min-h-[calc(100svh-4.5rem)] lg:grid-cols-12 lg:content-between lg:gap-x-6 lg:py-12 [@media(max-height:52rem)]:lg:gap-y-6 [@media(max-height:52rem)]:lg:py-6">
         <div className="flex flex-col justify-center lg:col-span-7" data-reveal>
-          {t.translationNote && (
-            <p className="mb-6 self-start border-l-2 border-brand bg-brand-soft px-4 py-2 text-sm text-brand-deep">
-              {t.translationNote}
-            </p>
-          )}
           <p className="label flex items-start gap-2">
             <span className="mt-1.5 size-2.5 shrink-0 bg-brand" aria-hidden />
             {h.eyebrow} · {h.model}
@@ -162,16 +185,18 @@ function Motto({ t }: { t: Dict }) {
   );
 }
 
-function Overview({ t }: { t: Dict }) {
-  const o = t.overview;
+// The case for the initiative: the forces at work, the two paths, and what is at stake.
+function Why({ t }: { t: Dict }) {
+  const w = t.why;
   return (
     <Section
-      id="overview"
+      id="why"
       t={t}
-      head={o}
+      head={w}
+      note={w.note}
       panels={[
         <div key="drivers" className="grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
-          {o.drivers.map((d, i) => (
+          {w.drivers.map((d, i) => (
             <div key={d.title} className="group relative border-t border-rule pt-5" data-reveal style={{ "--delay": `${i * 80}ms` } as React.CSSProperties}>
               <span aria-hidden className="absolute inset-x-0 -top-px h-0.5 origin-left scale-x-0 bg-brand transition-transform duration-500 group-hover:scale-x-100" />
               <p className="text-sm font-semibold text-brand">{pad(i + 1)}</p>
@@ -180,6 +205,70 @@ function Overview({ t }: { t: Dict }) {
             </div>
           ))}
         </div>,
+        <div key="paths" className="grid gap-6 lg:grid-cols-2">
+          {w.paths.map((p, i) => (
+            <article
+              key={p.tag}
+              className={`flex flex-col p-6 lg:p-8 ${i ? "bg-ink text-white" : "bg-paper-deep"}`}
+              data-reveal
+              style={{ "--delay": `${i * 80}ms` } as React.CSSProperties}
+            >
+              <p className={`text-sm font-semibold tracking-wide ${i ? "text-[#ff6b72]" : "text-ink-soft"}`}>{p.tag}</p>
+              <h3 className="d3 mt-3">{p.title}</h3>
+              <p className={`mt-4 ${i ? "text-white/75" : "text-ink-soft"}`}>{p.text}</p>
+              <div className="mt-auto pt-8">
+                <p className={`border-t pt-5 font-medium ${i ? "border-white/15" : "border-rule"}`}>
+                  <Strong text={p.result} strong={p.strong} className={i ? "text-[#ff6b72]" : "text-brand"} />
+                </p>
+              </div>
+            </article>
+          ))}
+        </div>,
+        <div key="table" role="table" className="border-t-2 border-ink">
+          <div role="row" className="hidden gap-6 py-3 text-sm font-semibold text-ink-soft lg:grid lg:grid-cols-[1.1fr_1.1fr_1fr]">
+            {w.table.head.map((h) => (
+              <span key={h} role="columnheader">
+                {h}
+              </span>
+            ))}
+          </div>
+          {w.table.rows.map((r) => {
+            // The last word travels with the layer codes so a code never starts a line alone.
+            const [head, tail] = withTail(r.answer);
+            return (
+              <div key={r.problem} role="row" className="grid gap-2 border-t border-rule py-4 lg:grid-cols-[1.1fr_1.1fr_1fr] lg:gap-6" data-reveal>
+                <span role="cell">{r.problem}</span>
+                <span role="cell" className="text-ink-soft">
+                  {r.effect}
+                </span>
+                <span role="cell" className="font-medium">
+                  {head}
+                  <span className="whitespace-nowrap">
+                    {tail}
+                    {r.codes.map((c) => (
+                      <span key={c} className="ml-1.5 inline-block border border-brand px-1.5 align-middle text-xs leading-5 font-semibold text-brand">
+                        {c}
+                      </span>
+                    ))}
+                  </span>
+                </span>
+              </div>
+            );
+          })}
+        </div>,
+      ]}
+    />
+  );
+}
+
+function Overview({ t }: { t: Dict }) {
+  const o = t.overview;
+  return (
+    <Section
+      id="overview"
+      t={t}
+      head={o}
+      panels={[
         <div key="facts" className="grid border-t-2 border-ink sm:grid-cols-2 lg:grid-cols-4">
           {o.facts.map((f) => (
             <div
@@ -605,6 +694,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
         <main>
           <Hero t={t} />
           <Motto t={t} />
+          <Why t={t} />
           <Overview t={t} />
           <Philosophy t={t} />
           <Model t={t} />

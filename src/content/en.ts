@@ -8,6 +8,8 @@ const en: Dict = {
   },
   brand: { project: "AI-native University", school: "Danang Architecture University" },
   nav: {
+    why: "Why",
+    book: "Book view",
     overview: "Overview",
     philosophy: "5T Philosophy",
     model: "Model",
@@ -31,11 +33,63 @@ const en: Dict = {
       { value: "2031", label: "AI-native target" },
     ],
   },
-  overview: {
-    label: "01 — Overview",
-    title: "A university transformation programme, not a software project",
+  why: {
+    label: "01 — Why",
+    title: "Why DAU needs the AI-native initiative",
     lead:
-      "This project is not about buying a chatbot or management software. It is about turning DAU into a university ecosystem that runs on data, learning outcomes, evidenced competence and AI — while people remain the final decision-makers.",
+      "AI is no longer limited to supporting small, individual tasks; it is reshaping the university’s entire value chain. Adding a chatbot to the LMS or using AI to draft lectures makes a university AI-assisted, not AI-native.",
+    note: "The translation of this section is awaiting review.",
+    paths: [
+      {
+        tag: "Path 1",
+        title: "Keep developing in silos",
+        text: "Each office runs its own software, each academic unit its own practices, each program its own learning-outcome matrix, and every accreditation cycle gathers evidence by hand.",
+        result: "The result: “data islands” that cannot assure quality, personalize learning, or build a lasting advantage.",
+        strong: "“data islands”",
+      },
+      {
+        tag: "DAU’s choice",
+        title: "Integrate into one AI-native ecosystem",
+        text: "Learning outcomes form the backbone, demonstrated competence is the goal, data are the infrastructure, and AI is the layer that supports action.",
+        result: "The result: one unified design in which people make the decisions.",
+        strong: "people make the decisions",
+      },
+    ],
+    table: {
+      head: ["Current problem", "Consequence if left unaddressed", "Solution in the initiative"],
+      rows: [
+        {
+          problem: "Data on teaching, examinations, the LMS, portfolios, and accreditation remain fragmented",
+          effect: "Attainment of learning outcomes is hard to measure, evidence is hard to retrieve, and decisions are slow",
+          answer: "The OBE/CBE Core, the Second Brain, and data governance",
+          codes: ["5D", "5F"],
+        },
+        {
+          problem: "AI risks being used as a set of disconnected tools",
+          effect: "Superficial chatbot adoption with no real gains in quality",
+          answer: "Coordination of AI agents with human-in-the-loop oversight",
+          codes: ["5H"],
+        },
+        {
+          problem: "Traditional assessment is easily replaced by AI",
+          effect: "Grades no longer fully reflect learners’ actual competence",
+          answer: "AI-resistant assessment tied to process, product, oral defense, and the Living Portfolio",
+          codes: ["5I"],
+        },
+        {
+          problem: "Accreditation still relies on compiling files each cycle",
+          effect: "Evidence is not kept current, and PDCA cycles are hard to close",
+          answer: "Continuously updated evidence and continuous accreditation readiness",
+          codes: ["5I"],
+        },
+        {
+          problem: "Students need personalized learning pathways",
+          effect: "Learning turns passive, and support does not arrive when it is needed",
+          answer: "An AI Tutor guided by the competency map",
+          codes: ["5E"],
+        },
+      ],
+    },
     drivers: [
       {
         title: "Technology is restructuring education",
@@ -54,6 +108,12 @@ const en: Dict = {
         text: "The focus of development is shifting from scale to competence, data, quality and innovation.",
       },
     ],
+  },
+  overview: {
+    label: "02 — Overview",
+    title: "A university transformation programme, not a software project",
+    lead:
+      "This project is not about buying a chatbot or management software. It is about turning DAU into a university ecosystem that runs on data, learning outcomes, evidenced competence and AI — while people remain the final decision-makers.",
     facts: [
       { value: "2006", title: "Foundation", text: "Nearly 20 years of growth and development." },
       { value: "6 years", title: "2026–2031", text: "A key strategic project of DAU." },
@@ -63,7 +123,7 @@ const en: Dict = {
   },
   motto: { label: "Motto", text: "Real Substance – Real Talent – Shaping the Future" },
   philosophy: {
-    label: "02 — Identity",
+    label: "03 — Identity",
     title: "Three tiers of 5T",
     lead:
       "5T is DAU’s identity, structured in three distinct tiers: a guiding philosophy, an educational approach and institutional brand values. AI-native is simply the infrastructure for realising these values.",
@@ -108,7 +168,7 @@ const en: Dict = {
     },
   },
   model: {
-    label: "03 — Model",
+    label: "04 — Model",
     title: "One integrated design, nine layers",
     lead:
       "The AI-native Competency-Based DAU model is built from nine layers, running from human values to intelligence and quality infrastructure — one integrated design, not scattered tools.",
@@ -125,7 +185,7 @@ const en: Dict = {
     ],
   },
   copilots: {
-    label: "04 — Copilots",
+    label: "05 — Copilots",
     title: "Four core Copilots, one shared foundation",
     lead:
       "Agentic AI is not a single chatbot but an ecosystem of agents with permissions, controls and accountability. Each Copilot has clear limits.",
@@ -161,7 +221,7 @@ const en: Dict = {
     quote: ["Second Brain helps DAU remember correctly", "World Models help DAU forecast better", "Humans decide"],
   },
   maturity: {
-    label: "05 — Maturity",
+    label: "06 — Maturity",
     title: "Five maturity levels",
     lead: "Each level is a prerequisite for the next. DAU moves step by step, measuring honestly before scaling up.",
     levels: [
@@ -174,7 +234,7 @@ const en: Dict = {
     target: "Target: reach level 5 by 2031.",
   },
   roadmap: {
-    label: "06 — Roadmap",
+    label: "07 — Roadmap",
     title: "Roadmap 2026–2031",
     lead: "Technology follows academic goals. Each phase expands only once data and evidence are reliable enough.",
     phases: [
@@ -201,7 +261,7 @@ const en: Dict = {
     ],
   },
   pillars: {
-    label: "07 — Pillars",
+    label: "08 — Pillars",
     title: "Seven strategic pillars",
     lead: "All pillars rest on a common foundation: 5T values and outcome-based education under OBE/VQF.",
     items: [
@@ -222,7 +282,7 @@ const en: Dict = {
     ],
   },
   studio: {
-    label: "08 — Pilot",
+    label: "09 — Pilot",
     title: "Architectural design studio",
     lead:
       "A 9-standard rubric for architectural design projects is the first pilot product. AI use is controlled and must be declared; students must demonstrate their individual competence. AI resilience is built in throughout rather than treated as a separate standard.",
@@ -240,7 +300,7 @@ const en: Dict = {
     ],
   },
   benchmark: {
-    label: "09 — Benchmarking",
+    label: "10 — Benchmarking",
     title: "Scientific basis and benchmarking",
     lead:
       "Every component of DAU’s design already has precedents around the world. The advantage therefore comes not from the AI-native label, but from the quality of integration.",
@@ -262,7 +322,7 @@ const en: Dict = {
     caveat: "This is an assessment of design quality and potential, not a claim that DAU has already achieved superior results.",
   },
   principles: {
-    label: "10 — Principles",
+    label: "11 — Principles",
     title: "Operating principles",
     items: [
       { title: "Humans decide", text: "Human-in-command is the governance principle; human-in-the-loop is the execution mechanism." },
