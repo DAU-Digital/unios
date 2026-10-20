@@ -48,3 +48,11 @@ Trang Vì sao ở bản Anh, Nhật, Trung có dòng ghi chú "đang chờ duy�
 | `why.table.rows.4.answer` | Gia sư AI theo bản đồ năng lực | An AI Tutor guided by the competency map | コンピテンシー・マップに基づくAIチューター | 依据能力图谱提供支持的AI学习导师 |
 | `why.table.rows.4.codes.0` | 5E | 5E | 5E | 5E |
 | `why.note` | — | The translation of this section is awaiting review. | このセクションの翻訳は確認中です。 | 本部分译文尚待审校。 |
+
+## Chuỗi không có trong file của thầy: tiếng Anh
+
+| Khóa | en | Ghi chú |
+|---|---|---|
+| `meta.description` | A 2026–2031 strategic initiative to build Danang Architecture University (DAU) as an AI-native Competency-Based 5T University. | Mô tả trang cho công cụ tìm kiếm |
+| `gate.error` | That access code is not correct. Please try again. | Báo sai mã truy cập; dùng "access code" theo file |
+| `overview.facts.1.value` | 6 years | File ghi "Six years"; trên site là số lớn nên viết bằng chữ số |

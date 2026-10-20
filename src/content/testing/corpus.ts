@@ -30,12 +30,15 @@ export const NEW_STRING_PATHS: RegExp[] = [
 ];
 
 // Paths of a dict's strings (12+ characters, outside NEW_STRING_PATHS) that do
-// not appear word for word in the given source file.
+// not appear word for word in the given source file. A fragment lifted from
+// mid-sentence may start with a capital ("For university administration." →
+// "University administration").
 export function notInSource(dict: unknown, file: SourceFile): string[] {
   const text = corpus(file);
+  const found = (s: string) => text.includes(s) || text.includes(s.charAt(0).toLowerCase() + s.slice(1));
   return leaves(dict)
     .filter(([path, s]) => s.length >= 12 && !NEW_STRING_PATHS.some((re) => re.test(path)))
-    .filter(([, s]) => !text.includes(norm(s)))
+    .filter(([, s]) => !found(norm(s)))
     .map(([path]) => path);
 }
 
