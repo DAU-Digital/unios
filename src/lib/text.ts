@@ -35,3 +35,8 @@ export function withTail(text: string): [head: string, tail: string] {
   if (chars.length <= 2) return ["", text];
   return [chars.slice(0, -2).join(""), chars.slice(-2).join("")];
 }
+
+// A label and its colon: full-width after Japanese or Chinese ("対象："), else ": ".
+export function withColon(label: string): string {
+  return /[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}]$/u.test(label) ? `${label}：` : `${label}: `;
+}

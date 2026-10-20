@@ -814,7 +814,7 @@ html[data-book-open] {
 }
 /* Long lists (Why table, roadmap phases) sit closer to fit one page. */
 .book-dense > li {
-  padding-block: 6px;
+  padding-block: 5px;
 }
 .book-dense .book-text {
   line-height: 1.38;

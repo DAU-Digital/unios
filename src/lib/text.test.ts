@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
-import { shortName, splitAlias, withTail, wrapLabel } from "./text";
+import { shortName, splitAlias, withColon, withTail, wrapLabel } from "./text";
 
 test("withTail splits off the last word, keeping glued words whole", () => {
   assert.deepEqual(withTail("theo bản đồ năng lực"), ["theo bản đồ ", "năng lực"]);
@@ -31,4 +31,11 @@ test("withTail splits chinese at its last word break", () => {
 test("splitAlias separates a name from its parenthesised english", () => {
   assert.deepEqual(splitAlias("教员支援Copilot（Faculty Copilot）"), ["教员支援Copilot", "Faculty Copilot"]);
   assert.deepEqual(splitAlias("Gia sư AI"), ["Gia sư AI", null]);
+});
+
+test("withColon uses a full-width colon after japanese and chinese labels", () => {
+  assert.equal(withColon("対象"), "対象：");
+  assert.equal(withColon("服务对象"), "服务对象：");
+  assert.equal(withColon("Đối tượng"), "Đối tượng: ");
+  assert.equal(withColon("For"), "For: ");
 });

@@ -159,3 +159,69 @@ test("english never breaks inside a hyphenated word", () => {
   assert.ok(fix("outcome-based education", "en").includes("outcome-⁠based"));
   assert.ok(fix("a university-wide digital twin", "en").includes("university-⁠wide"));
 });
+
+test("japanese lets a long compound break after its middle dot", () => {
+  // Glued, "グリーン・トランスフォーメーション、" is wider than a card and splits mid-word.
+  assert.ok(fix("グリーン・トランスフォーメーション", "ja").includes("・​ト"));
+  assert.ok(fix("BIM、コンストラクション・マネジメント", "ja").includes("・​マ"));
+});
+
+test("japanese keeps a short compound joined at its middle dot", () => {
+  assert.ok(fix("データ・AIガバナンス", "ja").includes("・⁠A"));
+  assert.ok(fix("教育・学修・運営", "ja").includes("教育・⁠学修・⁠運営"));
+});
+
+test("japanese never splits a word its phrase breaker cuts", () => {
+  // Chrome's auto-phrase breaks "関する方 / 針を策定する".
+  assert.ok(fix("データおよびAIに関する方針を策定する。", "ja").includes("方⁠針"));
+});
+
+test("place names stay whole in every language", () => {
+  const out = fix("越南岘港市Hòa Cường坊Núi Thành路566号", "zh");
+  assert.ok(out.includes("Hòa\u00a0Cường"), out);
+  assert.ok(out.includes("Núi\u00a0Thành"), out);
+});
+
+// Words Intl.Segmenter splits ("课|件", "常|态|化"), found in the screenshot review.
+const ZH_WORDS = [
+  "课件",
+  "而非",
+  "常态化",
+  "微证书",
+  "跨学科",
+  "工作室制",
+  "可证明",
+  "下一",
+  "量规",
+  "图谱",
+  "孪生体",
+  "试点",
+  "智能体",
+  "每类",
+  "基础设施",
+  "合作伙伴",
+  "人在回路",
+  "质量保障",
+  "学习管理系统",
+  "国家资格框架",
+  "评价量规",
+  "协同助手",
+  "学习成果",
+  "不在于",
+  "不提前",
+  "尚不构成",
+];
+
+const strings = (value: unknown): string[] =>
+  typeof value === "string" ? [value] : value && typeof value === "object" ? Object.values(value).flatMap(strings) : [];
+
+test("chinese keeps the words its segmenter splits whole", () => {
+  const copy = strings(getDict("zh"));
+  for (const word of ZH_WORDS) {
+    const hits = copy.filter((s) => s.replaceAll("​", "").includes(word));
+    assert.ok(hits.length > 0, `${word} is not in the copy`);
+    for (const s of hits) {
+      assert.equal(s.split(word).length, s.replaceAll("​", "").split(word).length, `${word} split in: ${s}`);
+    }
+  }
+});

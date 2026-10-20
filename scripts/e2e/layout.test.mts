@@ -137,8 +137,8 @@ test("every big number in the book has a caption", async () => {
   await page.close();
 });
 
-test("indicator items in the book never split", async () => {
-  for (const locale of ["vi", "en"]) {
+test("indicator items in the book never split or start a line with their separator", async () => {
+  for (const locale of ["vi", "en", "ja", "zh"]) {
     const page = await openPage(browser, `${site.url}/${locale}/`, PROJECTOR);
     await openBook(page);
     await page.keyboard.press("ArrowRight");
@@ -146,12 +146,60 @@ test("indicator items in the book never split", async () => {
     await wait(1200);
     const lines = await page.$$eval("[data-bridge-item]", (els) => els.map((el) => new Set([...el.getClientRects()].map((r) => Math.round(r.top))).size));
     assert.ok(lines.length > 0 && lines.every((n) => n === 1), `${locale}: ${lines.join(", ")}`);
+    // Each " · " ends the line of the item before it.
+    const stray = await page.evaluate(`[...document.querySelectorAll("[data-bridge-item]")].slice(1).filter((item) => {
+      const sep = item.previousSibling;
+      const range = document.createRange();
+      range.setStart(sep, sep.textContent.indexOf("·"));
+      range.setEnd(sep, sep.textContent.indexOf("·") + 1);
+      const before = [...item.parentElement.previousElementSibling.querySelector("[data-bridge-item]").getClientRects()].pop();
+      return Math.round(range.getClientRects()[0].top) !== Math.round(before.top);
+    }).length`);
+    assert.equal(stray, 0, `${locale}: ${stray} separators start a line`);
+    await page.close();
+  }
+});
+
+test("book text clears the page number", async () => {
+  for (const locale of ["vi", "en", "ja", "zh"]) {
+    const page = await openPage(browser, `${site.url}/${locale}/`, PROJECTOR);
+    await openBook(page);
+    // Running text only: a big figure's line box hangs below its digits.
+    const tight = await page.evaluate(`[...document.querySelectorAll(".book-page")].flatMap((pg) => {
+      const num = pg.querySelector(".book-num");
+      if (!num) return [];
+      const walker = document.createTreeWalker(pg.querySelector(".book-body"), NodeFilter.SHOW_TEXT);
+      let node, bottom = 0;
+      while ((node = walker.nextNode())) {
+        if (!node.textContent.trim() || parseFloat(getComputedStyle(node.parentElement).fontSize) > 24) continue;
+        const range = document.createRange();
+        range.selectNodeContents(node);
+        for (const r of range.getClientRects()) bottom = Math.max(bottom, r.bottom);
+      }
+      const gap = Math.round(num.getBoundingClientRect().top - bottom);
+      return gap < 6 ? [pg.dataset.kind + ": " + gap + "px"] : [];
+    })`);
+    assert.deepEqual(tight, [], locale);
+    await page.close();
+  }
+});
+
+test("copilots slide fits the projector screen", async () => {
+  for (const locale of ["vi", "en", "ja", "zh"]) {
+    const page = await openPage(browser, `${site.url}/${locale}/`, PROJECTOR, still);
+    await show(page, "copilots");
+    const box = await page.$eval("#copilots", (slide) => ({
+      height: Math.round(slide.getBoundingClientRect().height),
+      note: Math.round(slide.querySelector("article")!.parentElement!.nextElementSibling!.getBoundingClientRect().bottom),
+    }));
+    assert.ok(box.height <= PROJECTOR.height, `${locale}: slide is ${box.height}px tall`);
+    assert.ok(box.note <= PROJECTOR.height, `${locale}: note ends at ${box.note}`);
     await page.close();
   }
 });
 
 test("closing footer stays on the projector screen and clear of the rail", async () => {
-  for (const locale of ["vi", "en"]) {
+  for (const locale of ["vi", "en", "ja", "zh"]) {
     const page = await openPage(browser, `${site.url}/${locale}/`, PROJECTOR, still);
     await show(page, "closing");
     const box = await page.$eval("#closing footer", (footer) => {

@@ -11,7 +11,7 @@ import { HeroVisual } from "@/components/HeroVisual";
 import { Panels } from "@/components/Panels";
 import { getDict, type Dict, type Locale } from "@/content";
 import { jsonLd, pageMetadata } from "@/lib/seo";
-import { shortName, splitAlias, withTail } from "@/lib/text";
+import { shortName, splitAlias, withColon, withTail } from "@/lib/text";
 
 const pad = (n: number) => String(n).padStart(2, "0");
 
@@ -430,24 +430,26 @@ function Copilots({ t }: { t: Dict }) {
             {c.items.map((it, i) => (
               <article
                 key={it.name}
-                className="group relative flex flex-col bg-ink p-6 transition-colors duration-300 hover:bg-[#262a31] lg:row-span-4 lg:grid lg:grid-rows-subgrid lg:gap-y-0 lg:p-7"
+                className="group relative flex flex-col bg-ink p-6 transition-colors duration-300 hover:bg-[#262a31] lg:row-span-4 lg:grid lg:grid-rows-subgrid lg:gap-y-0 lg:p-7 [@media(max-height:52rem)]:lg:p-6"
                 data-reveal
                 style={{ "--delay": `${i * 80}ms` } as React.CSSProperties}
               >
                 <span aria-hidden className="absolute inset-x-0 top-0 h-0.5 origin-left scale-x-0 bg-brand transition-transform duration-500 group-hover:scale-x-100" />
                 <p className="text-sm text-white/55">
-                  {c.forLabel}: {it.for}
+                  {withColon(c.forLabel)}
+                  {it.for}
                 </p>
-                <CopilotName name={it.name} aliasClass="text-white/55" className="d3 mt-3" />
+                {/* Smaller names on a projector screen, so the cards and the note below fit. */}
+                <CopilotName name={it.name} aliasClass="text-white/55" className="d3 mt-3 [@media(max-height:52rem)]:lg:text-[1.5rem]" />
                 <p className="mt-4 min-h-[3lh] text-white/75">{it.does}</p>
-                <div data-copilot-guard className="mt-6 border-t border-white/15 pt-4">
+                <div data-copilot-guard className="mt-6 border-t border-white/15 pt-4 [@media(max-height:52rem)]:lg:mt-4">
                   <p className="text-xs font-semibold tracking-wide text-[#ff6b72]">{c.guardLabel}</p>
                   <p className="mt-1 font-medium">{it.guard}</p>
                 </div>
               </article>
             ))}
           </div>
-          <p className="mt-6 text-white/60">{c.foundation}</p>
+          <p className="mt-6 text-white/60 [@media(max-height:52rem)]:lg:mt-4">{c.foundation}</p>
         </div>,
         <div key="quote" className="grid gap-4 lg:grid-cols-4 lg:gap-x-6" data-reveal>
           <div className="lg:col-span-3 lg:col-start-2">

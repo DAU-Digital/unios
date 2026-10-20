@@ -30,6 +30,9 @@ const shared = [
   "Human-in-command",
   "Build–Buy–Partner",
   "Design × Domain",
+  // The address in the Chinese edition keeps the Vietnamese names.
+  "Núi Thành",
+  "Hòa Cường",
 ];
 
 const english = [
@@ -145,6 +148,11 @@ const ZWSP = "\u200b";
 const words = new Intl.Segmenter("zh-Hans", { granularity: "word" });
 const HAN = /\p{Script=Han}/u;
 
+// Words the segmenter splits ("课|件", "常|态|化"), found by scanning the copy.
+const chineseWords = `个性化|机器人化|机器人|价值观|价值链|优化|智能体式|智能体|准备度|成绩单|分散式|工作室制|常态化|决定权|决策权|自主权|受控|图谱|地域性|重塑|外围层|核心层|九层|学习者|数字孪生|孪生体|真才实学|求真务实|导向|审校|岘港市|建构性|建筑学|微证书|试点|层级|摘编|教务|数字化|自动化|景观|特质|闭环|省思|真实性|访问码|跨学科|达成度|量规|问责|顶部|通变|静定|课件|试行版|下一|上一|迈向|这一|三个|四个|五个|九个|每个|首个|七大|九项|四类|每类|每轮|各项|每一项|可观察|可衡量|可证明|可持续|可追溯|方可|对接|对标|而非|不在于|不提前|尚不构成|尚不能|大数据|以人为本|小规模|全过程|人在回路|基础设施|合作伙伴|质量保障|学习管理系统|国家资格框架|评价量规|协同助手|学习成果`
+  .split("|")
+  .map((w) => new RegExp([...w].join(`${ZWSP}?`), "gu"));
+
 function markWords(text: string): string {
   let out = "";
   let last = "";
@@ -153,15 +161,27 @@ function markWords(text: string): string {
     out += segment;
     last = isWordLike ? segment : "";
   }
+  for (const re of chineseWords) out = out.replace(re, (m) => m.replaceAll(ZWSP, ""));
   return out;
 }
+
+// Japanese may break after a middle dot. A short compound stays whole
+// ("リビング・ポートフォリオ", "データ・AI"); a long one would be wider than a
+// card and split mid-word, so its dot is marked as the place to break.
+const COMPOUND = "[\\p{Script=Katakana}\\p{Script=Han}ーA-Za-z0-9]+";
+const middleDot = new RegExp(`(${COMPOUND})・(?=(${COMPOUND}))`, "gu");
+
+// Words Chrome's Japanese phrase breaker cuts ("関する方 / 針を策定する").
+const japaneseWords = ["方針"].map((w) => new RegExp(w, "gu"));
 
 export function fix(text: string, locale: Locale): string {
   let out = text;
   for (const re of rules[locale]) out = out.replace(re, glue);
   if (locale === "zh") out = markWords(out);
-  // Japanese may break after a middle dot; keep katakana compounds whole ("リビング・ポートフォリオ").
-  if (locale === "ja") out = out.replace(/(?<=[\p{Script=Katakana}\p{Script=Han}ー])・(?=[\p{Script=Katakana}\p{Script=Han}])/gu, `・${WJ}`);
+  if (locale === "ja") {
+    out = out.replace(middleDot, (_, before: string, after: string) => `${before}・${before.length + after.length < 12 ? WJ : ZWSP}`);
+    for (const re of japaneseWords) out = out.replace(re, (m) => [...m].join(WJ));
+  }
   return (
     out
       // An acronym stays with its hyphenated word ("AI-native", "CBE-integrated").

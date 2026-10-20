@@ -1,6 +1,6 @@
 import Image from "next/image";
 import type { Dict } from "@/content";
-import { shortName, splitAlias, withTail } from "@/lib/text";
+import { shortName, splitAlias, withColon, withTail } from "@/lib/text";
 import { HeroVisual } from "../HeroVisual";
 import type { PageKind } from "./plan";
 
@@ -177,8 +177,8 @@ function content(kind: PageKind, t: Dict): React.ReactNode {
             <p className="book-item-name mt-1">
               {t.philosophy.bridge.items.map((b, i) => (
                 <span key={b}>
-                  {i > 0 && " · "}
-                  {/* An indicator breaks only between items. */}
+                  {/* An indicator breaks only between items, after their separator. */}
+                  {i > 0 && "\u00a0· "}
                   <span data-bridge-item className="whitespace-nowrap">
                     {b}
                   </span>
@@ -226,10 +226,12 @@ function content(kind: PageKind, t: Dict): React.ReactNode {
               <p className="book-item-name">{splitAlias(c.name)[0]}</p>
               {splitAlias(c.name)[1] && <p className="book-text text-ink-soft">{splitAlias(c.name)[1]}</p>}
               <p className="book-text text-ink-soft">
-                {t.copilots.forLabel}: {c.for}
+                {withColon(t.copilots.forLabel)}
+                {c.for}
               </p>
               <p className="book-text text-brand-deep">
-                {t.copilots.guardLabel}: {c.guard}
+                {withColon(t.copilots.guardLabel)}
+                {c.guard}
               </p>
             </li>
           ))}
@@ -268,7 +270,7 @@ function content(kind: PageKind, t: Dict): React.ReactNode {
       return (
         <ol className="book-list book-dense">
           {t.roadmap.phases.map((p) => (
-            <li key={p.when} className="grid grid-cols-[7.5rem_1fr] gap-x-4">
+            <li key={p.when} className="grid grid-cols-[6.25rem_1fr] gap-x-4">
               <span className="book-text font-semibold text-brand">{p.when}</span>
               <span>
                 <span className="book-item-name block">{p.name}</span>
@@ -376,7 +378,7 @@ function content(kind: PageKind, t: Dict): React.ReactNode {
       );
     case "principles-list":
       return (
-        <ol className="book-list">
+        <ol className="book-list book-dense">
           {t.principles.items.map((p) => (
             <li key={p.title}>
               <p className="book-item-name">{p.title}</p>
