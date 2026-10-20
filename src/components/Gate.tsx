@@ -5,10 +5,30 @@ import { useEffect, useRef, useState } from "react";
 import { localeLabels, locales, type Dict, type Locale } from "@/content";
 import { ACCESS_KEY, ACCESS_STORE } from "@/content/site";
 
+// What the welcome screen says; each page fills it from its own copy.
+export type GateCopy = {
+  school: string;
+  project: string;
+  eyebrow: string;
+  motto: string;
+  gate: Dict["gate"];
+};
+
+export function Gate({ t, locale }: { t: Dict; locale: Locale }) {
+  return (
+    <GateView
+      copy={{ school: t.brand.school, project: t.brand.project, eyebrow: t.hero.eyebrow, motto: t.motto.text, gate: t.gate }}
+      locale={locale}
+    />
+  );
+}
+
 // Welcome screen over the deck until the guest enters the access key. A guest
 // who has entered it once is let straight in (see the script in the layout).
-export function Gate({ t, locale }: { t: Dict; locale: Locale }) {
-  const g = t.gate;
+// `path` keeps the language links on the same page, e.g. "2050/".
+export function GateView({ copy, locale, path = "" }: { copy: GateCopy; locale: Locale; path?: string }) {
+  const t = { brand: { school: copy.school, project: copy.project }, hero: { eyebrow: copy.eyebrow }, motto: { text: copy.motto } };
+  const g = copy.gate;
   const input = useRef<HTMLInputElement>(null);
   const [phase, setPhase] = useState<"locked" | "opening" | "open">("locked");
   const [tries, setTries] = useState(0);
@@ -75,7 +95,7 @@ export function Gate({ t, locale }: { t: Dict; locale: Locale }) {
           {locales.map((l) => (
             <a
               key={l}
-              href={`/${l}/`}
+              href={`/${l}/${path}`}
               hrefLang={l}
               aria-current={l === locale ? "page" : undefined}
               className={`grid h-8 place-items-center px-3 font-medium ${l === locale ? "bg-ink text-white" : "text-ink-soft hover:text-ink"}`}
