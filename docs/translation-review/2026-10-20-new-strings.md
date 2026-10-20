@@ -65,3 +65,12 @@ Trang Vì sao ở bản Anh, Nhật, Trung có dòng ghi chú "đang chờ duy�
 | `gate.error` | アクセスコードが正しくありません。もう一度お試しください。 | Báo sai mã truy cập |
 | `targets.label` | 目標 | Nhãn ngắn của phần Chỉ tiêu (file chỉ có tiêu đề) |
 | `maturity.levels.4.name` | AIネイティブ | Ô "giai đoạn" của cấp 5 trong file để trống; dùng cách viết của file ở chỗ khác |
+
+## Chuỗi không có trong file của thầy: tiếng Trung
+
+| Khóa | zh | Ghi chú |
+|---|---|---|
+| `meta.description` | 岘港建筑大学（DAU）2026—2031年战略建设方案：建设AI原生能力本位5T大学。 | Mô tả trang cho công cụ tìm kiếm |
+| `gate.error` | 访问码不正确，请重新输入。 | Báo sai mã truy cập |
+| `targets.label` | 指标 | Nhãn ngắn của phần Chỉ tiêu (file chỉ có tiêu đề) |
+| `maturity.levels.4.name` | AI原生 | Ô "giai đoạn" của cấp 5 trong file để trống; dùng cách viết của file ở chỗ khác |
