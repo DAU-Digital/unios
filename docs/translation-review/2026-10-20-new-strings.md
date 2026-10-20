@@ -74,3 +74,12 @@ Trang Vì sao ở bản Anh, Nhật, Trung có dòng ghi chú "đang chờ duy�
 | `gate.error` | 访问码不正确，请重新输入。 | Báo sai mã truy cập |
 | `targets.label` | 指标 | Nhãn ngắn của phần Chỉ tiêu (file chỉ có tiêu đề) |
 | `maturity.levels.4.name` | AI原生 | Ô "giai đoạn" của cấp 5 trong file để trống; dùng cách viết của file ở chỗ khác |
+
+## Trang 404 (không có trong file của thầy)
+
+| Khóa | vi | en | ja | zh |
+|---|---|---|---|---|
+| Dòng dưới logo | Đại học AI-native | AI-native University | AIネイティブ大学 | AI原生大学 |
+| Câu cuối của lời nhắn | Mời bạn quay lại trang giới thiệu Đề án AI-native University. | Head back to the AI-native University Initiative page. | AIネイティブ大学構想のページへお戻りください。 | 请返回AI原生大学建设方案页面。 |
+
+Câu "chủ sở hữu" của trang 404 bản Nhật và Trung đã đổi cho khớp chân trang trong file của thầy.
