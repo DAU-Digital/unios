@@ -246,10 +246,21 @@
   animation: hv-twinkle 4s ease-in-out infinite;
   animation-delay: calc(var(--i) * 0.5s);
 }
+/* The lit layer follows the caption (HeroVisual); hover or focus holds it. */
+.hero-visual .hv-layer {
+  cursor: pointer;
+  outline: none;
+}
 .hero-visual .hv-layer-on {
   opacity: 0;
-  animation: hv-layer 9s linear infinite;
-  animation-delay: calc(var(--i) * 1s);
+  transition: opacity 0.3s;
+}
+.hero-visual .hv-layer.is-on .hv-layer-on {
+  opacity: 1;
+}
+.hero-visual .hv-layer:focus-visible .hv-hit {
+  stroke: var(--color-brand);
+  stroke-width: 2;
 }
 @keyframes hv-draw {
   to {
@@ -296,17 +307,6 @@
   }
   50% {
     opacity: 1;
-  }
-}
-/* Each layer is lit for ~1s of a 9s cycle. */
-@keyframes hv-layer {
-  0%,
-  11% {
-    opacity: 1;
-  }
-  15%,
-  100% {
-    opacity: 0;
   }
 }
 

@@ -8,7 +8,7 @@ import { HeroVisual } from "@/components/HeroVisual";
 import { Panels } from "@/components/Panels";
 import { getDict, type Dict, type Locale } from "@/content";
 import { jsonLd, pageMetadata } from "@/lib/seo";
-import { withTail } from "@/lib/text";
+import { shortName, withTail } from "@/lib/text";
 
 const pad = (n: number) => String(n).padStart(2, "0");
 
@@ -151,7 +151,12 @@ function Hero({ t }: { t: Dict }) {
         </div>
 
         <div className="flex items-center justify-center lg:col-span-5">
-          <HeroVisual className="aspect-square w-full max-w-[32rem] lg:max-h-[calc(100svh-17rem)]" />
+          <HeroVisual
+            layers={t.model.layers}
+            copilots={t.copilots.items.map((c) => shortName(c.name))}
+            label={t.hero.model}
+            className="w-full max-w-[32rem]"
+          />
         </div>
 
         <dl className="grid grid-cols-2 border-t-2 border-ink sm:grid-cols-4 lg:col-span-12" data-reveal>

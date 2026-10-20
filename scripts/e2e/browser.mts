@@ -8,9 +8,16 @@ export function launch(): Promise<Browser> {
   return puppeteer.launch({ executablePath: chrome, headless: true });
 }
 
-export async function openPage(browser: Browser, url: string, viewport = { width: 1440, height: 900 }): Promise<Page> {
+export async function openPage(
+  browser: Browser,
+  url: string,
+  viewport = { width: 1440, height: 900 },
+  // Runs before navigation, e.g. to emulate reduced motion or stub an API.
+  setup?: (page: Page) => Promise<void>,
+): Promise<Page> {
   const page = await browser.newPage();
   await page.setViewport(viewport);
+  await setup?.(page);
   // A returning guest skips the welcome screen (see the unlock script in the locale layout).
   await page.evaluateOnNewDocument(() => localStorage.setItem("dau-access", "1"));
   await page.goto(url, { waitUntil: "networkidle0" });
