@@ -56,3 +56,12 @@ Trang Vì sao ở bản Anh, Nhật, Trung có dòng ghi chú "đang chờ duy�
 | `meta.description` | A 2026–2031 strategic initiative to build Danang Architecture University (DAU) as an AI-native Competency-Based 5T University. | Mô tả trang cho công cụ tìm kiếm |
 | `gate.error` | That access code is not correct. Please try again. | Báo sai mã truy cập; dùng "access code" theo file |
 | `overview.facts.1.value` | 6 years | File ghi "Six years"; trên site là số lớn nên viết bằng chữ số |
+
+## Chuỗi không có trong file của thầy: tiếng Nhật
+
+| Khóa | ja | Ghi chú |
+|---|---|---|
+| `meta.description` | ダナン建築大学（DAU）を、AIネイティブ・コンピテンシー基盤型5T大学へと発展させる2026～2031年の戦略構想。 | Mô tả trang cho công cụ tìm kiếm |
+| `gate.error` | アクセスコードが正しくありません。もう一度お試しください。 | Báo sai mã truy cập |
+| `targets.label` | 目標 | Nhãn ngắn của phần Chỉ tiêu (file chỉ có tiêu đề) |
+| `maturity.levels.4.name` | AIネイティブ | Ô "giai đoạn" của cấp 5 trong file để trống; dùng cách viết của file ở chỗ khác |
