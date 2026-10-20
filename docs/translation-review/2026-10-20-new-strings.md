@@ -2,6 +2,8 @@
 
 Các chuỗi dưới đây **không có trong ba file song ngữ của thầy** (20/10/2026). Phần tiếng Việt viết sát theo Executive Summary, mục 2. Phần tiếng Anh, Nhật, Trung do nhóm làm site dịch, bám mục "Ghi chú thuật ngữ" trong file của thầy. Các chuỗi này đã hiện trên site.
 
+`nav.menu` là nút mở menu trên điện thoại; `nav.close` là nút đóng menu và nút ✕ đóng chế độ xem sách.
+
 Trang Vì sao ở bản Anh, Nhật, Trung có dòng ghi chú "đang chờ duyệt bản dịch" (`why.note`). Khi thầy duyệt xong thì bỏ dòng đó.
 
 ## Trang Vì sao và menu
@@ -10,6 +12,8 @@ Trang Vì sao ở bản Anh, Nhật, Trung có dòng ghi chú "đang chờ duy�
 |---|---|---|---|---|
 | `nav.why` | Vì sao | Why | なぜ必要か | 为何需要 |
 | `nav.book` | Xem dạng sách | Book view | ブック表示 | 书本视图 |
+| `nav.menu` | Menu | Menu | メニュー | 菜单 |
+| `nav.close` | Đóng | Close | 閉じる | 关闭 |
 | `why.label` | 01 — Vì sao | 01 — Why | 01 — なぜ必要か | 01 — 为何需要 |
 | `why.title` | Vì sao DAU cần đề án AI-native | Why DAU needs the AI-native initiative | DAUにAIネイティブ構想が必要な理由 | DAU为何需要AI原生大学建设方案 |
 | `why.lead` | AI không còn chỉ hỗ trợ từng tác vụ nhỏ mà đang tác động đến toàn bộ chuỗi giá trị của đại học. Chỉ thêm chatbot vào LMS hay dùng AI soạn bài giảng mới là AI-assisted, chưa phải AI-native. | AI is no longer limited to supporting small, individual tasks; it is reshaping the university’s entire value chain. Adding a chatbot to the LMS or using AI to draft lectures makes a university AI-assisted, not AI-native. | AIはもはや個々の小さな作業を支えるだけではなく、大学の価値連鎖全体に影響を及ぼしつつある。LMSにチャットボットを加えたり、AIで講義資料を作成したりするだけでは、AIネイティブではなくAI支援（AI-assisted）の段階にとどまる。 | AI已不只是辅助单项小任务，而是正在影响大学的整个价值链。仅在学习管理系统（LMS）中加入聊天机器人，或用AI编写课件，只是“AI辅助”（AI-assisted），而非AI原生。 |

@@ -54,6 +54,10 @@ export function Book({
     if (to === from) return;
     atRef.current = to;
     if (Math.abs(to - from) > 1) {
+      // A jump lands at once: no leaf may stay lifted above the stacks.
+      Object.values(timers.current).forEach((t) => window.clearTimeout(t));
+      timers.current = {};
+      setTurning({});
       skipAnimation();
     } else {
       const k = Math.min(from, to);
@@ -175,7 +179,13 @@ export function Book({
           <div className="book-static is-left">{pages[0]}</div>
           <div className="book-static is-right">{pages[2 * LEAVES + 1]}</div>
           {Array.from({ length: LEAVES }, (_, k) => (
-            <div key={k} className="book-leaf" data-flipped={k < at || undefined} style={{ zIndex: turning[k] ?? restingZ(k, at) }}>
+            <div
+              key={k}
+              className="book-leaf"
+              data-flipped={k < at || undefined}
+              data-turning={k in turning || undefined}
+              style={{ zIndex: turning[k] ?? restingZ(k, at) }}
+            >
               <div className="book-face">{pages[2 * k + 1]}</div>
               <div className="book-face book-back">{pages[2 * k + 2]}</div>
             </div>

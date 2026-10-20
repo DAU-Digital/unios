@@ -641,12 +641,28 @@ html[data-book-open] {
 .book-back {
   transform: rotateY(180deg);
 }
+/* A page darkens while it turns and clears when it lands (mockup flip-style.html). */
+.book-face::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.5s;
+  background: linear-gradient(to left, rgb(0 0 0 / 0.22), transparent 70%);
+}
+.book-leaf[data-turning] .book-face::after {
+  opacity: 1;
+}
 .book-jump .book-leaf {
   transition: none;
 }
 @media (prefers-reduced-motion: reduce) {
   .book-leaf {
     transition: none;
+  }
+  .book-face::after {
+    content: none;
   }
 }
 .book-page {

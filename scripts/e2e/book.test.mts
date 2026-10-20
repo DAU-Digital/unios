@@ -93,6 +93,19 @@ test("button shows only on wide landscape screens", async () => {
   await wide.close();
 });
 
+// The page numbers painted on the left and right of the open book.
+const painted = (page: Page) =>
+  page.evaluate(`(() => {
+    const sheet = document.querySelector(".book-sheet").getBoundingClientRect();
+    const y = sheet.top + sheet.height / 2;
+    const pageAt = (x) => {
+      const el = document.elementFromPoint(x, y);
+      const p = el && el.closest("[data-page]");
+      return p ? p.getAttribute("data-page") : null;
+    };
+    return [pageAt(sheet.left + sheet.width * 0.25), pageAt(sheet.left + sheet.width * 0.75)];
+  })()`) as Promise<[string | null, string | null]>;
+
 test("rapid flips keep page order", async () => {
   const page = await openPage(browser, `${site.url}/vi/`, PROJECTOR);
   await openBook(page);
@@ -102,17 +115,44 @@ test("rapid flips keep page order", async () => {
   }
   await wait(1400);
   assert.equal(await spread(page), 5);
-  const pages = await page.evaluate(`(() => {
-    const sheet = document.querySelector(".book-sheet").getBoundingClientRect();
-    const y = sheet.top + sheet.height / 2;
-    const pageAt = (x) => {
-      const el = document.elementFromPoint(x, y);
-      const p = el && el.closest("[data-page]");
-      return p ? p.getAttribute("data-page") : null;
-    };
-    return [pageAt(sheet.left + sheet.width * 0.25), pageAt(sheet.left + sheet.width * 0.75)];
-  })()`);
-  assert.deepEqual(pages, ["11", "12"]);
+  assert.deepEqual(await painted(page), ["11", "12"]);
+  await page.close();
+});
+
+test("a jump during a turn shows its spread at once", async () => {
+  const page = await openPage(browser, `${site.url}/vi/`, PROJECTOR);
+  await openBook(page);
+  await page.keyboard.press("ArrowRight");
+  await wait(250);
+  await page.keyboard.press("End");
+  await wait(250);
+  assert.deepEqual(await painted(page), ["31", "32"], "End");
+  await wait(1200);
+  await page.keyboard.press("ArrowLeft");
+  await wait(250);
+  await page.keyboard.press("Home");
+  await wait(250);
+  assert.deepEqual(await painted(page), ["1", "2"], "Home");
+  await page.close();
+});
+
+// Opacity of each page face's turning shade (0 where there is none).
+const shades = (page: Page) =>
+  page.$$eval(".book-face", (faces) =>
+    faces.map((f) => {
+      const s = getComputedStyle(f, "::after");
+      return s.content === "none" ? 0 : Number(s.opacity);
+    }),
+  );
+
+test("a turning page casts a shade until it lands", async () => {
+  const page = await openPage(browser, `${site.url}/vi/`, PROJECTOR);
+  await openBook(page);
+  await page.keyboard.press("ArrowRight");
+  await wait(500);
+  assert.ok(Math.max(...(await shades(page))) > 0.3, "no shade while turning");
+  await wait(1500);
+  assert.ok(Math.max(...(await shades(page))) < 0.05, "shade left after landing");
   await page.close();
 });
 
@@ -170,6 +210,9 @@ test("reduced motion turns pages without animation", async () => {
   );
   await openBook(page);
   assert.equal(await page.$eval(".book-leaf", (el) => getComputedStyle(el).transitionDuration), "0s");
+  await page.keyboard.press("ArrowRight");
+  await wait(300);
+  assert.equal(Math.max(...(await shades(page))), 0, "shade without a turn");
   await page.close();
 });
 
