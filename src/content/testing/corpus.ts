@@ -19,6 +19,26 @@ export function corpus(file: SourceFile): string {
   return norm(readFileSync(join(process.cwd(), "docs/translation-source/2026-10-20", `${file}.txt`), "utf8"));
 }
 
+// Copy that is not in the teacher's files: written for this round (see
+// docs/translation-review) or reshaped from them (renumbered section labels).
+export const NEW_STRING_PATHS: RegExp[] = [
+  /^meta\.description$/,
+  /^gate\.error$/,
+  /^nav\.(menu|close|why|book)$/,
+  /^why\.(label|title|lead|note|paths|table)/,
+  /^[a-z]+\.label$/,
+];
+
+// Paths of a dict's strings (12+ characters, outside NEW_STRING_PATHS) that do
+// not appear word for word in the given source file.
+export function notInSource(dict: unknown, file: SourceFile): string[] {
+  const text = corpus(file);
+  return leaves(dict)
+    .filter(([path, s]) => s.length >= 12 && !NEW_STRING_PATHS.some((re) => re.test(path)))
+    .filter(([, s]) => !text.includes(norm(s)))
+    .map(([path]) => path);
+}
+
 // Every string inside a value, with its dotted path ("model.layers.3.name").
 export function leaves(value: unknown, path = ""): [path: string, text: string][] {
   if (typeof value === "string") return [[path, value]];
