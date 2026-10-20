@@ -69,7 +69,12 @@ const MUST_GLUE = [
   "Chỉ số xác thực minh chứng",
   "Thiết kế × Lĩnh vực chuyên môn",
   "với AI dẫn dắt",
-  "nâng mức trưởng thành",
+  "trưởng thành AI-native",
+  "Tầm vóc châu Á và thế giới",
+  "chỉ là",
+  "đào tạo theo chuẩn đầu ra",
+  "bảo đảm chất lượng",
+  "đào tạo theo năng lực",
   "nhật ký kiểm toán",
   "triết lý định hướng",
   "quản trị dữ liệu",
@@ -115,7 +120,19 @@ test("an acronym never breaks from its hyphenated word", () => {
 });
 
 test("english product and discipline names stay whole", () => {
-  for (const name of ["Visual Communication", "Project Finance", "Urban Design", "Sustainable Construction", "Digital Product"]) {
+  for (const name of [
+    "Visual Communication",
+    "Project Finance",
+    "Urban Design",
+    "Sustainable Construction",
+    "Digital Product",
+    "Proven Capability",
+    "Shaping the Future",
+    "and engineering",
+    "Data Maturity Index",
+    "Evidence Validation Index",
+    "demonstrated competence",
+  ]) {
     assert.equal(fix(name, "en"), name.replaceAll(" ", NBSP), name);
   }
 });
@@ -136,4 +153,9 @@ test("japanese keeps katakana compounds joined at their middle dot", () => {
 
 test("shared names glue inside japanese text", () => {
   assert.ok(fix("というBuild–Buy–Partnerモデル", "ja").includes("Build–⁠Buy–⁠Partner"));
+});
+
+test("english never breaks inside a hyphenated word", () => {
+  assert.ok(fix("outcome-based education", "en").includes("outcome-⁠based"));
+  assert.ok(fix("a university-wide digital twin", "en").includes("university-⁠wide"));
 });

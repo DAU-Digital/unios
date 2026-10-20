@@ -149,3 +149,17 @@ test("indicator items in the book never split", async () => {
     await page.close();
   }
 });
+
+test("closing footer stays on the projector screen and clear of the rail", async () => {
+  for (const locale of ["vi", "en"]) {
+    const page = await openPage(browser, `${site.url}/${locale}/`, PROJECTOR, still);
+    await show(page, "closing");
+    const box = await page.$eval("#closing footer", (footer) => {
+      const texts = [...footer.querySelectorAll("p, a, span")].map((el) => el.getBoundingClientRect()).filter((r) => r.width > 0);
+      return { bottom: Math.max(...texts.map((r) => r.bottom)), right: Math.max(...texts.map((r) => r.right)) };
+    });
+    assert.ok(box.bottom <= PROJECTOR.height, `${locale}: footer text ends at ${box.bottom}`);
+    assert.ok(box.right <= PROJECTOR.width - 48, `${locale}: footer text reaches ${box.right}`);
+    await page.close();
+  }
+});

@@ -708,7 +708,7 @@ function Closing({ t }: { t: Dict }) {
             “
           </span>
           <div className="lg:col-span-3">
-            <blockquote className="quote">{t.closing.quote}</blockquote>
+            <blockquote className="quote [@media(max-height:52rem)]:text-[1.5rem]">{t.closing.quote}</blockquote>
             <figcaption className="label mt-6">— {t.closing.cite}</figcaption>
           </div>
         </figure>
