@@ -18,9 +18,9 @@ after(async () => {
   await site.close();
 });
 
-test("why has three panels", async () => {
+test("why has four panels", async () => {
   const page = await openPage(browser, `${site.url}/vi/`);
-  assert.equal(await page.$$eval("#why [data-track] > .panel", (els) => els.length), 3);
+  assert.equal(await page.$$eval("#why [data-track] > .panel", (els) => els.length), 4);
   await page.close();
 });
 

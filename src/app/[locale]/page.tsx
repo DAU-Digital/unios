@@ -193,6 +193,44 @@ function Motto({ t }: { t: Dict }) {
   );
 }
 
+// The Why table, split over two panels so every row fits a projector screen.
+function WhyTable({ head, rows }: { head: Dict["why"]["table"]["head"]; rows: Dict["why"]["table"]["rows"] }) {
+  return (
+    <div role="table" className="border-t-2 border-ink">
+      <div role="row" className="hidden gap-6 py-2 text-sm font-semibold text-ink-soft lg:grid lg:grid-cols-[1.1fr_1.1fr_1fr]">
+        {head.map((h) => (
+          <span key={h} role="columnheader">
+            {h}
+          </span>
+        ))}
+      </div>
+      {rows.map((r) => {
+        // The last word travels with the layer codes so a code never starts a line alone.
+        const [lead, tail] = withTail(r.answer);
+        return (
+          <div key={r.problem} role="row" className="grid gap-2 border-t border-rule py-2.5 lg:grid-cols-[1.1fr_1.1fr_1fr] lg:gap-6" data-reveal>
+            <span role="cell">{r.problem}</span>
+            <span role="cell" className="text-ink-soft">
+              {r.effect}
+            </span>
+            <span role="cell" className="font-medium">
+              {lead}
+              <span className="whitespace-nowrap">
+                {tail}
+                {r.codes.map((c) => (
+                  <span key={c} className="ml-1.5 inline-block border border-brand px-1.5 align-middle text-xs leading-5 font-semibold text-brand">
+                    {c}
+                  </span>
+                ))}
+              </span>
+            </span>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
 // The case for the initiative: the forces at work, the two paths, and what is at stake.
 function Why({ t }: { t: Dict }) {
   const w = t.why;
@@ -213,57 +251,28 @@ function Why({ t }: { t: Dict }) {
             </div>
           ))}
         </div>,
-        <div key="paths" className="grid gap-6 lg:grid-cols-2">
+        // Subgrid rows keep the two cards' result lines level.
+        <div key="paths" className="grid gap-6 lg:grid-cols-2 lg:grid-rows-[repeat(4,auto)]">
           {w.paths.map((p, i) => (
             <article
               key={p.tag}
-              className={`flex flex-col p-6 lg:p-8 ${i ? "bg-ink text-white" : "bg-paper-deep"}`}
+              className={`flex flex-col p-6 lg:row-span-4 lg:grid lg:grid-rows-subgrid lg:gap-y-0 lg:p-8 ${i ? "bg-ink text-white" : "bg-paper-deep"}`}
               data-reveal
               style={{ "--delay": `${i * 80}ms` } as React.CSSProperties}
             >
               <p className={`text-sm font-semibold tracking-wide ${i ? "text-[#ff6b72]" : "text-ink-soft"}`}>{p.tag}</p>
               <h3 className="d3 mt-3">{p.title}</h3>
               <p className={`mt-4 ${i ? "text-white/75" : "text-ink-soft"}`}>{p.text}</p>
-              <div className="mt-auto pt-8">
-                <p className={`border-t pt-5 font-medium ${i ? "border-white/15" : "border-rule"}`}>
+              <div className="pt-8">
+                <p data-path-result className={`border-t pt-5 font-medium ${i ? "border-white/15" : "border-rule"}`}>
                   <Strong text={p.result} strong={p.strong} className={i ? "text-[#ff6b72]" : "text-brand"} />
                 </p>
               </div>
             </article>
           ))}
         </div>,
-        <div key="table" role="table" className="border-t-2 border-ink">
-          <div role="row" className="hidden gap-6 py-3 text-sm font-semibold text-ink-soft lg:grid lg:grid-cols-[1.1fr_1.1fr_1fr]">
-            {w.table.head.map((h) => (
-              <span key={h} role="columnheader">
-                {h}
-              </span>
-            ))}
-          </div>
-          {w.table.rows.map((r) => {
-            // The last word travels with the layer codes so a code never starts a line alone.
-            const [head, tail] = withTail(r.answer);
-            return (
-              <div key={r.problem} role="row" className="grid gap-2 border-t border-rule py-4 lg:grid-cols-[1.1fr_1.1fr_1fr] lg:gap-6" data-reveal>
-                <span role="cell">{r.problem}</span>
-                <span role="cell" className="text-ink-soft">
-                  {r.effect}
-                </span>
-                <span role="cell" className="font-medium">
-                  {head}
-                  <span className="whitespace-nowrap">
-                    {tail}
-                    {r.codes.map((c) => (
-                      <span key={c} className="ml-1.5 inline-block border border-brand px-1.5 align-middle text-xs leading-5 font-semibold text-brand">
-                        {c}
-                      </span>
-                    ))}
-                  </span>
-                </span>
-              </div>
-            );
-          })}
-        </div>,
+        <WhyTable key="table-1" head={w.table.head} rows={w.table.rows.slice(0, 3)} />,
+        <WhyTable key="table-2" head={w.table.head} rows={w.table.rows.slice(3)} />,
       ]}
     />
   );
@@ -282,13 +291,15 @@ function Overview({ t }: { t: Dict }) {
             <div
               key={f.value}
               data-reveal
-              className="group flex min-h-48 flex-col justify-between gap-10 border-b border-rule p-6 transition-colors duration-300 hover:bg-brand hover:text-white sm:[&:nth-child(odd)]:border-r lg:min-h-60 lg:border-r lg:last:border-r-0"
+              className="group flex min-h-48 flex-col justify-start gap-10 border-b border-rule p-6 transition-colors duration-300 hover:bg-brand hover:text-white sm:[&:nth-child(odd)]:border-r lg:min-h-60 lg:border-r lg:last:border-r-0"
             >
               <p className="num" data-count>
                 {f.value}
               </p>
               <div>
-                <p className="d4">{f.title}</p>
+                <p data-fact-title className="d4">
+                  {f.title}
+                </p>
                 <p className="mt-2 text-ink-soft group-hover:text-white/85">{f.text}</p>
               </div>
             </div>
@@ -398,11 +409,12 @@ function Copilots({ t }: { t: Dict }) {
       className="bg-ink text-white"
       panels={[
         <div key="items">
-          <div className="grid gap-px bg-white/15 sm:grid-cols-2 lg:grid-cols-4">
+          {/* Subgrid rows keep the cards' limit lines level. */}
+          <div className="grid gap-px bg-white/15 sm:grid-cols-2 lg:grid-cols-4 lg:grid-rows-[repeat(4,auto)]">
             {c.items.map((it, i) => (
               <article
                 key={it.name}
-                className="group relative flex flex-col bg-ink p-6 transition-colors duration-300 hover:bg-[#262a31] lg:p-7"
+                className="group relative flex flex-col bg-ink p-6 transition-colors duration-300 hover:bg-[#262a31] lg:row-span-4 lg:grid lg:grid-rows-subgrid lg:gap-y-0 lg:p-7"
                 data-reveal
                 style={{ "--delay": `${i * 80}ms` } as React.CSSProperties}
               >
@@ -412,7 +424,7 @@ function Copilots({ t }: { t: Dict }) {
                 </p>
                 <h3 className="d3 mt-3">{it.name}</h3>
                 <p className="mt-4 min-h-[3lh] text-white/75">{it.does}</p>
-                <div className="mt-6 border-t border-white/15 pt-4">
+                <div data-copilot-guard className="mt-6 border-t border-white/15 pt-4">
                   <p className="text-xs font-semibold tracking-wide text-[#ff6b72]">{c.guardLabel}</p>
                   <p className="mt-1 font-medium">{it.guard}</p>
                 </div>
@@ -444,14 +456,20 @@ function Maturity({ t }: { t: Dict }) {
       head={m}
       panels={[
         <div key="levels">
-          <ol className="grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-5">
+          {/* Subgrid rows keep the descriptions level whatever the names wrap to. */}
+          <ol className="grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-5 lg:grid-rows-[repeat(5,auto)]">
             {m.levels.map((l, i) => (
-              <li key={l.en} data-reveal style={{ "--delay": `${i * 80}ms` } as React.CSSProperties}>
+              <li key={l.en} className="lg:row-span-5 lg:grid lg:grid-rows-subgrid lg:gap-y-0" data-reveal style={{ "--delay": `${i * 80}ms` } as React.CSSProperties}>
                 <div className={`grow-x h-1 ${i === m.levels.length - 1 ? "bg-brand" : "bg-ink"}`} style={{ opacity: 0.35 + i * 0.16 }} />
                 <p className="label mt-5">{pad(i + 1)}</p>
                 <h3 className="d4 mt-2">{l.name}</h3>
-                {l.en !== l.name && <p className="text-sm text-ink-soft">{l.en}</p>}
-                <p className="mt-3 text-ink-soft">{l.text}</p>
+                {/* The second name line, held empty where a level has none so the rows stay level. */}
+                <p className="text-sm text-ink-soft" aria-hidden={l.en === l.name || undefined}>
+                  {l.en !== l.name ? l.en : ""}
+                </p>
+                <p data-level-text className="mt-3 text-ink-soft">
+                  {l.text}
+                </p>
               </li>
             ))}
           </ol>
@@ -494,7 +512,7 @@ function Roadmap({ t }: { t: Dict }) {
           <Phases phases={r.phases.slice(3)} from={3} />
           <div className="grid gap-4 border-t-2 border-ink pt-8 lg:grid-cols-4 lg:gap-x-6" data-reveal>
             <p className="quote font-normal lg:col-span-3">“{r.principle}”</p>
-            <p className="text-sm text-ink-soft lg:pt-2">{r.note}</p>
+            <p className="text-sm text-ink-soft lg:pt-2 lg:pr-6">{r.note}</p>
           </div>
         </div>,
       ]}
@@ -626,8 +644,10 @@ function Benchmark({ t }: { t: Dict }) {
               {b.advantages.map((a, i) => (
                 <li key={a} className="group relative flex gap-4 border-t border-rule py-4" data-reveal>
                   <span aria-hidden className="absolute inset-x-0 -top-px h-0.5 origin-left scale-x-0 bg-brand transition-transform duration-500 group-hover:scale-x-100" />
-                  <span className="text-sm font-semibold text-brand">{pad(i + 1)}</span>
-                  <span className="font-medium transition-transform duration-300 group-hover:translate-x-1">{a}</span>
+                  <span className="w-6 shrink-0 text-sm font-semibold text-brand tabular-nums">{pad(i + 1)}</span>
+                  <span data-advantage-text className="font-medium transition-transform duration-300 group-hover:translate-x-1">
+                    {a}
+                  </span>
                 </li>
               ))}
             </ol>
@@ -665,7 +685,8 @@ function Principles({ t }: { t: Dict }) {
 function Closing({ t }: { t: Dict }) {
   return (
     <Slide id="closing" title={t.closing.cite} className="!justify-between lg:!pr-0">
-      <Container className="slide-body">
+      {/* The footer runs full width; the quote keeps the room other slides leave for the rail. */}
+      <Container className="slide-body lg:pr-16">
         <figure className="grid gap-6 border-t-2 border-ink pt-8 lg:grid-cols-4 lg:gap-x-6" data-reveal>
           <span className="text-7xl leading-none font-bold text-brand" aria-hidden>
             “

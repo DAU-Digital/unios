@@ -53,6 +53,29 @@ const MUST_GLUE = [
   "Mô hình thế giới",
   "Điều phối tác nhân AI",
   "Hiệu quả hạ tầng AI",
+  // Found in the screenshot review (npm run shots)
+  "bản đồ năng lực",
+  "vì vậy",
+  "chưa phải",
+  "không phải",
+  "trong khi",
+  "ra quyết định",
+  "chương trình đào tạo",
+  "con người trong vòng lặp",
+  "hạ tầng trí tuệ",
+  "một nền tảng chung",
+  "một hệ sinh thái",
+  "Chỉ số trưởng thành dữ liệu",
+  "Chỉ số xác thực minh chứng",
+  "Thiết kế × Lĩnh vực chuyên môn",
+  "với AI dẫn dắt",
+  "nâng mức trưởng thành",
+  "nhật ký kiểm toán",
+  "triết lý định hướng",
+  "quản trị dữ liệu",
+  "không chỉ",
+  "thực sáng tạo",
+  "phá dữ liệu nền",
 ];
 
 const NBSP = " ";
@@ -76,4 +99,23 @@ test("AI- never breaks", () => {
   const out = fix("AI-assisted và AI-native", "vi");
   assert.ok(out.includes("AI-⁠assisted"));
   assert.ok(out.includes("AI-⁠native"));
+});
+
+test("a year range never breaks at its dash", () => {
+  assert.ok(fix("khóa mới 2027–2030", "vi").includes("2027–⁠2030"));
+});
+
+test("a spaced dash stays with the word before it", () => {
+  assert.equal(fix("Kiến trúc – Xây dựng", "vi").replace(/ /g, "_"), "Kiến_trúc_– Xây_dựng");
+  assert.equal(fix("Substance – Proven", "en"), "Substance – Proven");
+});
+
+test("an acronym never breaks from its hyphenated word", () => {
+  assert.ok(fix("AI-integrated and CBE-integrated", "en").includes("CBE-⁠integrated"));
+});
+
+test("english product and discipline names stay whole", () => {
+  for (const name of ["Visual Communication", "Project Finance", "Urban Design", "Sustainable Construction", "Digital Product"]) {
+    assert.equal(fix(name, "en"), name.replaceAll(" ", NBSP), name);
+  }
 });

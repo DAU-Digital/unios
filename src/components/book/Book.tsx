@@ -33,7 +33,6 @@ export function Book({
 }) {
   const root = useRef<HTMLDivElement>(null);
   const stage = useRef<HTMLDivElement>(null);
-  const closeButton = useRef<HTMLButtonElement>(null);
   const atRef = useRef(0);
   const timers = useRef<Record<number, number>>({});
   const inFullscreen = useRef(false);
@@ -109,7 +108,9 @@ export function Book({
       .catch(() => {
         // Not allowed here; the book still covers the window.
       });
-    closeButton.current?.focus({ preventScroll: true });
+    // Focus the book itself: a clicker's key presses would otherwise light up a
+    // focus ring on whichever button held the focus for the whole presentation.
+    root.current?.focus({ preventScroll: true });
 
     const onKey = (e: KeyboardEvent) => {
       if (e.altKey || e.ctrlKey || e.metaKey) return;
@@ -166,6 +167,7 @@ export function Book({
       aria-modal="true"
       aria-label={title}
       hidden={!open}
+      tabIndex={-1}
       className={`book ${jump ? "book-jump" : ""}`}
     >
       <div ref={stage} className="book-stage" onClick={onStageClick}>
@@ -183,14 +185,14 @@ export function Book({
           <button type="button" data-book-prev onClick={() => goTo(atRef.current - 1)} disabled={at === 0} aria-label={prevLabel}>
             ←
           </button>
-          <span className="tabular-nums">
+          <span className="min-w-[6.5rem] text-center tabular-nums">
             {2 * at + 1}–{2 * at + 2} / {pages.length}
           </span>
           <button type="button" data-book-next onClick={() => goTo(atRef.current + 1)} disabled={at === LAST} aria-label={nextLabel}>
             →
           </button>
         </div>
-        <button ref={closeButton} type="button" data-book-close onClick={close} className="book-close" aria-label={closeLabel}>
+        <button type="button" data-book-close onClick={close} className="book-close" aria-label={closeLabel}>
           ✕
         </button>
       </div>

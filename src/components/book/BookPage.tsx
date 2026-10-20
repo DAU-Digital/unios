@@ -21,11 +21,11 @@ function Opener({ label, title, lead, children }: { label: string; title: string
 }
 
 // A large figure at the foot of an opening page ("9" layers, "4" Copilots…).
-function Big({ value, caption }: { value: string; caption?: string }) {
+function Big({ value, caption }: { value: string; caption: string }) {
   return (
     <p className="book-big">
       <span className="book-big-num">{value}</span>
-      {caption && <span className="book-big-cap">{caption}</span>}
+      <span className="book-big-cap">{caption}</span>
     </p>
   );
 }
@@ -174,7 +174,17 @@ function content(kind: PageKind, t: Dict): React.ReactNode {
         <Tier tier={t.philosophy.tiers[2]}>
           <div className="mt-auto border-t-2 border-ink pt-3">
             <p className="book-text text-ink-soft">{t.philosophy.bridge.label}</p>
-            <p className="book-item-name mt-1">{t.philosophy.bridge.items.join(" · ")}</p>
+            <p className="book-item-name mt-1">
+              {t.philosophy.bridge.items.map((b, i) => (
+                <span key={b}>
+                  {i > 0 && " · "}
+                  {/* An indicator breaks only between items. */}
+                  <span data-bridge-item className="whitespace-nowrap">
+                    {b}
+                  </span>
+                </span>
+              ))}
+            </p>
           </div>
         </Tier>
       );
@@ -282,9 +292,7 @@ function content(kind: PageKind, t: Dict): React.ReactNode {
       );
     case "pillars-open":
       return (
-        <Opener label={t.pillars.label} title={t.pillars.title} lead={t.pillars.lead}>
-          <Big value={String(t.pillars.items.length)} />
-        </Opener>
+        <Opener label={t.pillars.label} title={t.pillars.title} lead={t.pillars.lead} />
       );
     case "pillars-list":
       return (
@@ -363,9 +371,7 @@ function content(kind: PageKind, t: Dict): React.ReactNode {
       );
     case "principles-open":
       return (
-        <Opener label={t.principles.label} title={t.principles.title}>
-          <Big value={String(t.principles.items.length)} />
-        </Opener>
+        <Opener label={t.principles.label} title={t.principles.title} />
       );
     case "principles-list":
       return (

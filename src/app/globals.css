@@ -52,6 +52,10 @@
   :lang(ja) {
     word-break: auto-phrase;
   }
+  /* text-wrap: pretty (below) ignores those phrases and splits words ("方 / 針"). */
+  :is(p, li, dd, blockquote, figcaption):lang(ja) {
+    text-wrap: wrap;
+  }
   /* A phrase wider than a phone screen may still break inside. */
   :lang(ja),
   :lang(zh-Hans) {
@@ -804,4 +808,17 @@ html[data-book-open] {
 }
 .book-dense .book-text {
   line-height: 1.38;
+}
+.book:focus {
+  outline: none;
+}
+.book-list > li:last-child {
+  border-bottom: 0;
+}
+/* Wide screens leave room for the slide rail beside the 90rem container, so
+   slides line up with the header again. */
+@media (min-width: 95rem) {
+  .slide {
+    padding-right: 0;
+  }
 }
