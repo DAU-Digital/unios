@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { Book } from "@/components/book/Book";
+import { BookPage } from "@/components/book/BookPage";
+import { PAGES } from "@/components/book/plan";
 import { Deck } from "@/components/Deck";
 import { Footer } from "@/components/Footer";
 import { Gate } from "@/components/Gate";
@@ -715,6 +718,16 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
         </main>
         <Deck hint={t.deck.hint} />
       </div>
+      {/* Outside #deck, which turns inert while the book is open. */}
+      <Book
+        pages={PAGES.map((kind, i) => (
+          <BookPage key={kind} kind={kind} t={t} number={i + 1} />
+        ))}
+        title={t.brand.project}
+        closeLabel={t.nav.close}
+        prevLabel={t.deck.prev}
+        nextLabel={t.deck.next}
+      />
     </>
   );
 }

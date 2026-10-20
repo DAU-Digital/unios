@@ -16,6 +16,12 @@ function currentSlide(slides: HTMLElement[]) {
   return at;
 }
 
+// The id of the slide on screen, e.g. to open the book view at the same place.
+export function currentSlideId(): string {
+  const slides = [...document.querySelectorAll<HTMLElement>("[data-slide]")];
+  return slides[currentSlide(slides)]?.id ?? "";
+}
+
 // Presentation controls: ↑/↓ (PageUp/PageDown, Space) change slide, ←/→ walk
 // through a slide's details first and then on to the next slide, like a clicker.
 export function Deck({ hint }: { hint: string }) {
@@ -36,6 +42,8 @@ export function Deck({ hint }: { hint: string }) {
     slides.forEach((s) => seen.observe(s));
 
     const onKey = (e: KeyboardEvent) => {
+      // The book view (Book.tsx) takes the keys while it is open.
+      if (document.documentElement.hasAttribute("data-book-open")) return;
       if (!unlocked() || e.altKey || e.ctrlKey || e.metaKey) return;
       const target = e.target as HTMLElement;
       if (target.closest("input, textarea, select, [contenteditable]")) return;

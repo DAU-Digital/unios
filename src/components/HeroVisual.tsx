@@ -52,11 +52,14 @@ export function HeroVisual({
   copilots,
   label,
   className = "",
+  variant = "hero",
 }: {
   layers: Layer[];
   copilots: string[];
   label: string;
   className?: string;
+  // "book": sized for a page of the book view, where text must read from afar.
+  variant?: "hero" | "book";
 }) {
   const dots = useId();
   const [lit, setLit] = useState(0);
@@ -76,7 +79,9 @@ export function HeroVisual({
 
   return (
     <div className={`flex flex-col ${className}`}>
-      <svg viewBox="0 0 560 560" className="hero-visual aspect-square w-full lg:max-h-[calc(100svh-26rem)] [@media(max-height:52rem)]:lg:max-h-[calc(100svh-24rem)]" role="group" aria-label={label}>
+      <svg viewBox="0 0 560 560" className={`hero-visual aspect-square w-full ${
+          variant === "book" ? "max-h-[340px]" : "lg:max-h-[calc(100svh-26rem)] [@media(max-height:52rem)]:lg:max-h-[calc(100svh-24rem)]"
+        }`} role="group" aria-label={label}>
         <defs>
           <pattern id={dots} width="20" height="20" patternUnits="userSpaceOnUse">
             <circle cx="1" cy="1" r="1" className="fill-ink/15" />
@@ -194,7 +199,7 @@ export function HeroVisual({
           >
             <span className="row-span-2 text-3xl leading-none font-bold tracking-tight text-brand">{l.code}</span>
             <span className="d4">{l.name}</span>
-            <span className="mt-1 text-sm text-ink-soft">{l.text}</span>
+            <span className={`mt-1 text-ink-soft ${variant === "book" ? "text-base" : "text-sm"}`}>{l.text}</span>
           </p>
         ))}
       </div>
