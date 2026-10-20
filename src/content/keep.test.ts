@@ -119,3 +119,21 @@ test("english product and discipline names stay whole", () => {
     assert.equal(fix(name, "en"), name.replaceAll(" ", NBSP), name);
   }
 });
+
+test("chinese breaks only between words", () => {
+  const out = fix("难以快速决策", "zh");
+  assert.ok(out.includes("​"), "no break opportunity between words");
+  assert.doesNotMatch(out, /决​策|快​速/);
+});
+
+test("chinese keeps a latin term joined to its han word", () => {
+  assert.ok(!fix("AI原生大学", "zh").includes("AI​"));
+});
+
+test("japanese keeps katakana compounds joined at their middle dot", () => {
+  assert.ok(fix("リビング・ポートフォリオ", "ja").includes("・⁠ポ"));
+});
+
+test("shared names glue inside japanese text", () => {
+  assert.ok(fix("というBuild–Buy–Partnerモデル", "ja").includes("Build–⁠Buy–⁠Partner"));
+});

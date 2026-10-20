@@ -24,6 +24,12 @@ const nodes = [
   { x: C - 130, y: C, ty: C + 32 },
 ] as const;
 const LINE = 15;
+const LABEL = 13;
+
+// Rough width of a label line (Han and kana ≈ 1em, other glyphs ≈ 0.6em), for
+// the paper patch that keeps the diagram's lines from striking through it.
+const labelWidth = (text: string) =>
+  [...text.replace(/[\u200b\u2060]/g, "")].reduce((w, ch) => w + (/[\u3000-\u9fff\uff00-\uffef]/.test(ch) ? 1 : 0.6) * LABEL, 0);
 
 const ring = Array.from({ length: 9 }, (_, i) => {
   const a = ((-90 + i * 40) * Math.PI) / 180;
@@ -167,6 +173,10 @@ export function HeroVisual({
             <g key={i} className="hv-node" style={{ "--i": i } as React.CSSProperties}>
               <rect x={n.x - 9} y={n.y - 9} width="18" height="18" className="fill-paper stroke-ink" strokeWidth="1.5" />
               <rect x={n.x - 4} y={n.y - 4} width="8" height="8" className="fill-ink" />
+              {lines.map((line, j) => {
+                const w = labelWidth(line) + 8;
+                return <rect key={j} x={n.x - w / 2} y={top + j * LINE - LABEL * 0.9} width={w} height={LABEL * 1.25} className="fill-paper" />;
+              })}
               <text x={n.x} y={top} textAnchor="middle" className="hv-label fill-ink text-[13px] font-semibold">
                 {lines.map((line, j) => (
                   <tspan key={j} x={n.x} dy={j ? LINE : 0}>

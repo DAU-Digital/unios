@@ -56,6 +56,16 @@
   :is(p, li, dd, blockquote, figcaption):lang(ja) {
     text-wrap: wrap;
   }
+  /* Chinese breaks only where keep.ts marked a word boundary (a zero-width
+     space), not between any two characters ("决 / 策"). Simplified Chinese
+     glyphs come before the Japanese font. */
+  html:lang(zh-Hans) {
+    font-family:
+      var(--font-bricolage), "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Noto Sans SC", system-ui, sans-serif;
+  }
+  :lang(zh-Hans) {
+    word-break: keep-all;
+  }
   /* A phrase wider than a phone screen may still break inside. */
   :lang(ja),
   :lang(zh-Hans) {

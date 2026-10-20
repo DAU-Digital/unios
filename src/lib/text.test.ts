@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
-import { shortName, withTail, wrapLabel } from "./text";
+import { shortName, splitAlias, withTail, wrapLabel } from "./text";
 
 test("withTail splits off the last word, keeping glued words whole", () => {
   assert.deepEqual(withTail("theo bản đồ năng lực"), ["theo bản đồ ", "năng lực"]);
@@ -22,4 +22,13 @@ test("wrapLabel breaks only at plain spaces", () => {
   assert.deepEqual(wrapLabel("Copilot dành cho giảng viên", 16), ["Copilot dành cho", "giảng viên"]);
   assert.deepEqual(wrapLabel("AI Tutor", 16), ["AI Tutor"]);
   assert.deepEqual(wrapLabel("大学運営支援Copilot", 16), ["大学運営支援Copilot"]);
+});
+
+test("withTail splits chinese at its last word break", () => {
+  assert.deepEqual(withTail("依据​能力​图谱"), ["依据​能力​", "图谱"]);
+});
+
+test("splitAlias separates a name from its parenthesised english", () => {
+  assert.deepEqual(splitAlias("教员支援Copilot（Faculty Copilot）"), ["教员支援Copilot", "Faculty Copilot"]);
+  assert.deepEqual(splitAlias("Gia sư AI"), ["Gia sư AI", null]);
 });

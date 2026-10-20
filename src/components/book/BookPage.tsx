@@ -1,6 +1,6 @@
 import Image from "next/image";
 import type { Dict } from "@/content";
-import { shortName, withTail } from "@/lib/text";
+import { shortName, splitAlias, withTail } from "@/lib/text";
 import { HeroVisual } from "../HeroVisual";
 import type { PageKind } from "./plan";
 
@@ -223,7 +223,8 @@ function content(kind: PageKind, t: Dict): React.ReactNode {
         <ol className="book-list">
           {t.copilots.items.map((c) => (
             <li key={c.name}>
-              <p className="book-item-name">{c.name}</p>
+              <p className="book-item-name">{splitAlias(c.name)[0]}</p>
+              {splitAlias(c.name)[1] && <p className="book-text text-ink-soft">{splitAlias(c.name)[1]}</p>}
               <p className="book-text text-ink-soft">
                 {t.copilots.forLabel}: {c.for}
               </p>

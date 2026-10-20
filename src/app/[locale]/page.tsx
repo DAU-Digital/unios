@@ -11,7 +11,7 @@ import { HeroVisual } from "@/components/HeroVisual";
 import { Panels } from "@/components/Panels";
 import { getDict, type Dict, type Locale } from "@/content";
 import { jsonLd, pageMetadata } from "@/lib/seo";
-import { shortName, withTail } from "@/lib/text";
+import { shortName, splitAlias, withTail } from "@/lib/text";
 
 const pad = (n: number) => String(n).padStart(2, "0");
 
@@ -54,6 +54,22 @@ function SectionHead({ label, title, lead, note, dark }: Head & { note?: string;
         )}
       </div>
     </div>
+  );
+}
+
+// A Copilot's name, with any parenthesised English alias on its own small line
+// ("AIチューター（AI Tutor）"), so narrow cards never break inside it.
+function CopilotName({ name, className, aliasClass }: { name: string; className: string; aliasClass: string }) {
+  const [main, alias] = splitAlias(name);
+  return (
+    <h3 className={className}>
+      {main}
+      {alias && (
+        <span data-copilot-alias className={`mt-1 block text-sm font-normal tracking-normal ${aliasClass}`}>
+          {alias}
+        </span>
+      )}
+    </h3>
   );
 }
 
@@ -422,7 +438,7 @@ function Copilots({ t }: { t: Dict }) {
                 <p className="text-sm text-white/55">
                   {c.forLabel}: {it.for}
                 </p>
-                <h3 className="d3 mt-3">{it.name}</h3>
+                <CopilotName name={it.name} aliasClass="text-white/55" className="d3 mt-3" />
                 <p className="mt-4 min-h-[3lh] text-white/75">{it.does}</p>
                 <div data-copilot-guard className="mt-6 border-t border-white/15 pt-4">
                   <p className="text-xs font-semibold tracking-wide text-[#ff6b72]">{c.guardLabel}</p>
